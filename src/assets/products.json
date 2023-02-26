@@ -1,0 +1,40 @@
+{
+  "data":[
+    {
+      "id":1,
+      "image":"1.jpg",
+      "name":"Grandy Protein",
+      "description": "stronk Grandma",
+      "price":"10",
+      "type":"Protein",
+      "inventoryStatus":"instock"
+    },
+    {
+      "id":2,
+      "image":"2.jpg",
+      "name":"Hand Grip",
+      "description": "stronk Grandma",
+      "price":"10",
+      "type":"Accessory",
+      "inventoryStatus":"lowstock"
+    },
+    {
+      "id":3,
+      "image":"3.png",
+      "name":"Dumbbell",
+      "description": "stronk Grandma",
+      "price":"20",
+      "type":"Protein",
+      "inventoryStatus":"outofstock"
+    },
+    {
+      "id":4,
+      "image":"4.png",
+      "name":"Dumbbell",
+      "description": "stronk Grandma",
+      "price":"20",
+      "type":"Accessory",
+      "inventoryStatus":"outofstock"
+    }
+  ]
+}
