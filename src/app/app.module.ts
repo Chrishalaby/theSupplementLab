@@ -16,6 +16,8 @@ import {ButtonModule} from 'primeng/button';
 import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
 import {CarouselModule} from 'primeng/carousel';
+import {InputTextModule} from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import {CarouselModule} from 'primeng/carousel';
     ContactComponent
   ],
   imports: [
+    InputTextModule,
     CarouselModule,
     RippleModule,
     RatingModule,
