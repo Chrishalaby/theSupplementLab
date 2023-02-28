@@ -13,7 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
-
+import {RatingModule} from 'primeng/rating';
+import {RippleModule} from 'primeng/ripple';
+import {CarouselModule} from 'primeng/carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,9 @@ import {ButtonModule} from 'primeng/button';
     ContactComponent
   ],
   imports: [
+    CarouselModule,
+    RippleModule,
+    RatingModule,
     ButtonModule,
     DropdownModule,
     DataViewModule,

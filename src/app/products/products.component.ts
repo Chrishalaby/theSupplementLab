@@ -27,7 +27,7 @@ export class ProductsComponent {
     search: [],
     sort: [],
   });
-
+  rating = 5;
   @ViewChild('dv') dataView!: DataView;
   constructor(private readonly httpClient: HttpClient, private readonly formBuilder: FormBuilder) { }
 

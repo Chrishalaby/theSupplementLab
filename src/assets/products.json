@@ -2,8 +2,8 @@
   "data":[
     {
       "id":1,
-      "image":"1.jpg",
-      "name":"Grandy Protein",
+      "image":"6.png",
+      "name":"MASS GAINER",
       "description": "stronk Grandma",
       "price":"10",
       "type":"Protein",
@@ -11,17 +11,17 @@
     },
     {
       "id":2,
-      "image":"2.jpg",
-      "name":"Hand Grip",
+      "image":"5.png",
+      "name":"PLANT BASED WHEY",
       "description": "stronk Grandma",
       "price":"10",
-      "type":"Accessory",
+      "type":"Protein",
       "inventoryStatus":"lowstock"
     },
     {
       "id":3,
-      "image":"3.png",
-      "name":"Dumbbell",
+      "image":"4.png",
+      "name":"WHEY",
       "description": "stronk Grandma",
       "price":"20",
       "type":"Protein",
@@ -29,8 +29,35 @@
     },
     {
       "id":4,
-      "image":"4.png",
-      "name":"Dumbbell",
+      "image":"choco1.png",
+      "name":"SUGAR-FREE WHEY PROTEIN",
+      "description": "stronk Grandma",
+      "price":"20",
+      "type":"Accessory",
+      "inventoryStatus":"instock"
+    },
+    {
+      "id":5,
+      "image":"choco2.png",
+      "name":"WHEY PROTEIN",
+      "description": "stronk Grandma",
+      "price":"20",
+      "type":"Accessory",
+      "inventoryStatus":"outofstock"
+    },
+    {
+      "id":6,
+      "image":"choco3.png",
+      "name":"WHEY PROTEIN",
+      "description": "stronk Grandma",
+      "price":"20",
+      "type":"Accessory",
+      "inventoryStatus":"instock"
+    },
+    {
+      "id":7,
+      "image":"choco4.png",
+      "name":"WHEY PROTEIN",
       "description": "stronk Grandma",
       "price":"20",
       "type":"Accessory",
