@@ -3,6 +3,10 @@ import { Component } from '@angular/core';
 import { tap } from 'rxjs';
 import { Product } from '../products/products.component';
 
+export interface BrandIcons{
+  id: number;
+  image: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -28,9 +32,12 @@ export class HomeComponent {
       numScroll: 1
     }
   ];
+
+  brandIcons: BrandIcons[] = [];
   constructor(private readonly httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get<any>('assets/products.json').pipe(tap((products: any)=> {this.products = products.data;})).subscribe();
+    this.httpClient.get<Product>('assets/products.json').pipe(tap((products: any)=> {this.products = products.data;})).subscribe();
+    this.httpClient.get<BrandIcons>('assets/products.json').pipe(tap((brandIcons: any)=> {this.brandIcons = brandIcons.brandIcons;})).subscribe();
   }
 }

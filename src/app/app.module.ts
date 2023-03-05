@@ -17,6 +17,8 @@ import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
 import {CarouselModule} from 'primeng/carousel';
 import {InputTextModule} from 'primeng/inputtext';
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,12 @@ import {InputTextModule} from 'primeng/inputtext';
     HeaderComponent,
     ProductsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
+    DataViewModule,
+    ReactiveFormsModule,
     InputTextModule,
     CarouselModule,
     RippleModule,

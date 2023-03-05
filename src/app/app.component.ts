@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { Carousel } from 'primeng/carousel';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,10 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent {
   title = 'The Supplement Lab';
-  constructor(private primengConfig: PrimeNGConfig) {}
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-    }
+  constructor(private primengConfig: PrimeNGConfig) {
+    Carousel.prototype.onTouchMove = () => { };
+  }
+  ngOnInit() {
+      this.primengConfig.ripple = true;
+  }
 }

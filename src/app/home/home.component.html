@@ -1,8 +1,8 @@
-<section class="flex align-content-center flex-column flex-wrap line-height-3 text-center mb-3 md:b-8">
-  <div class="flex flex-column md:flex-row justify-content-center"
+<section class="line-height-3 text-center">
+  <div class="flex flex-column md:flex-row md:justify-content-around align-items-center w-12"
     style="background-image: url(assets/images/home.jpg); color: white; background-repeat: no-repeat;  background-size: cover;">
     <div class="align-self-center w-8 md:w-4 mt-4 md:mt-0">
-      <h1 class="text-4xl md:text-7xl">20% OFF SALE</h1>
+      <h1 class="text-4xl md:text-7xl text-left">20% OFF SALE</h1>
       <p class="line-height-3 md:text-lg mt-3 md:mt-0 text-left">
         Our pure whey protein sourced & made in the USA from grass-fed cows.
         Made from Non-GMO ingredients. No artificial flavors, colors, or sweeteners.
@@ -12,9 +12,31 @@
       </p>
       <button pButton pRipple type="button" label="SHOP NOW" [routerLink]="['/products']" class="p-button-outlined mt-3"></button>
     </div>
-    <div class="mt-0 md:mt-8 w-9 md:w-5 ml-0 md:ml-6 flex align-self-center">
-      <img src="assets/images/background.png" alt="Supplements" class="mt-8 w-12 md:w-10"/>
-    </div>
+    <!-- <div class="mt-0 md:mt-8 w-9 md:w-1 ml-0 md:ml-6 flex align-self-center"> -->
+      <!-- <img src="assets/images/background.png" alt="Supplements" class="mt-8 w-12 md:w-10"/> -->
+      <p-carousel [value]="products" class="w-9 md:w-3 my-2 md:my-8" [numVisible]="1" [numScroll]="1" [circular]="true"
+        [autoplayInterval]="3000" [showNavigators]="false" [showIndicators]="false">
+        <ng-template let-product pTemplate="item">
+          <div class="product-item">
+            <div class="product-item-content">
+              <div class="mb-3">
+                <img [src]="'assets/images/' + product.image" [alt]="product.name" class="product-image"/>
+              </div>
+              <div>
+                <h4 class="mb-1">{{product.name}}</h4>
+                <h6 class="mt-0 mb-3 font-bold text-xl">${{product.price}}</h6>
+                <!-- <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
+                <!-- <div class="car-buttons mt-5">
+                    <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+                    <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    <!-- </div> -->
   </div>
 
   <div class="text-center mt-8">
@@ -29,9 +51,7 @@
     </div>
   </div>
 
-
-</section>
-<p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+  <p-carousel [value]="products" class="w-full" [numVisible]="3" [numScroll]="1" [circular]="true"
   [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showNavigators]="false">
     <!-- <ng-template pTemplate="header">
         <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
@@ -40,7 +60,7 @@
         <div class="product-item">
             <div class="product-item-content">
                 <div class="mb-3">
-                    <img [src]="'assets/images/' + product.image" [alt]="product.name" class="product-image h-15rem w-10rem"/>
+                    <img [src]="'assets/images/' + product.image" [alt]="product.name" class="product-image"/>
                 </div>
                 <div>
                     <h4 class="mb-1">{{product.name}}</h4>
@@ -55,8 +75,15 @@
             </div>
         </div>
     </ng-template>
-</p-carousel>
-<section class="flex align-content-center flex-column flex-wrap line-height-3 text-center mb-8">
-  <button pButton pRipple type="button" label="SHOP ALL PRODUCTS" [routerLink]="['/products']" class="p-button-outlined mt-3"></button>
+  </p-carousel>
 
+  <button pButton pRipple type="button" label="SHOP ALL PRODUCTS" [routerLink]="['/products']" class="p-button-outlined mt-3"></button>
+  <div class="my-4">
+    <h3 class="text-2xl">Our Brands</h3>
+    <div class="flex flex-row justify-content-around mt-2">
+      <div *ngFor="let brands of brandIcons">
+        <img [src]="'assets/images/brandsIcons/' + brands.image" class="h-3rem w-3rem">
+      </div>
+    </div>
+  </div>
 </section>
