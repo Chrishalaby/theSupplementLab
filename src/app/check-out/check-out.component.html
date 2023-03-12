@@ -1,0 +1,46 @@
+<section class="flex align-content-center justify-content-center flex-wrap flex-column  my-3">
+  <form [formGroup]="infoForm" class="flex justify-content-center flex-column w-9 gap-4">
+    <div class="flex flex-column md:flex-row justify-content-between">
+      <div class="flex flex-column gap-3">
+        <span class="p-float-label">
+          <input id="float-input" type="text" [required]="true" pInputText formControlName="name">
+          <label for="float-input">Name</label>
+        </span>
+        <span class="p-float-label">
+          <input id="float-input" type="text" [required]="true" pInputText formControlName="phoneNumber">
+          <label for="float-input">Phone Number</label>
+        </span>
+      </div>
+      <img src="assets/images/TSE.png" class="flex align-self-center mt-2 md:mt-0" height="100" width="100">
+    </div>
+
+    <div class="flex flex-row justify-content-between">
+      <h1>Name</h1>
+      <h1>Unit Price</h1>
+    </div>
+    <div *ngFor="let product of productsCart" class="flex flex-row justify-content-between">
+        <p>{{product.name}}</p>
+        <!-- <td>1</td> -->
+        <p>${{product.price}}</p>
+        <!-- <td>$49.00</td> -->
+    </div>
+    <div class="flex justify-content-end flex-column">
+      <div class="flex flex-row justify-content-between">
+        <p>Sub Total</p>
+        <p>${{totalPrice}}</p>
+      </div>
+      <div class="flex flex-row justify-content-between">
+        <p>VAT</p>
+        <p>$0.00</p>
+      </div>
+      <div class="flex flex-row justify-content-between">
+        <p>Total</p>
+        <p>${{totalPrice}}</p>
+      </div>
+    </div>
+    <div class="flex flex-row justify-content-center gap-2">
+      <button type="button" pButton label="Cancel" (click)="closeCheckOut()" class="p-button-outlined p-button-secondary"></button>
+      <button type="submit" pButton label="Submit" (click)="checkOut()" class="p-button-outlined"></button>
+    </div>
+  </form>
+</section>

@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SelectItem } from 'primeng/api';
 import { debounceTime, tap } from 'rxjs';
 import { DataView } from 'primeng/dataview';
+import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
+import { CartProductsComponent } from './cart-products/cart-products.component';
 
 export interface Product {
   id: number;
@@ -20,7 +23,8 @@ export interface Product {
 export class ProductsComponent {
 
   products: Product[] = [];
-
+  productsCart: Product[] = [];
+  productForm!: FormGroup;
   sortOrder!: number ;
   sortField!: string;
   sortOptions: SelectItem[] = [];
@@ -34,7 +38,9 @@ export class ProductsComponent {
 
   @ViewChild('dv') dataView!: DataView;
   constructor(private readonly httpClient: HttpClient,
-    private readonly formBuilder: FormBuilder) { }
+    private readonly formBuilder: FormBuilder,
+    private messageService: MessageService,
+    public dialogService: DialogService) { }
 
   ngOnInit(): void {
 
@@ -46,5 +52,19 @@ export class ProductsComponent {
     // this.sortOrder = event.order;
     // this.sortField = event.field;
     console.log(event);
+  }
+
+  addToCart(product: Product) {
+    this.productsCart.push(product);
+    console.log(this.productsCart);
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Product Added to Cart'});
+  }
+
+  showCart(){
+    this.dialogService.open(CartProductsComponent, {
+      data: this.productsCart,
+      header: 'Your Cart',
+      width: '70%'
+  });
   }
 }

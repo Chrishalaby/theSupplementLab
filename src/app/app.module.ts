@@ -19,7 +19,14 @@ import {CarouselModule} from 'primeng/carousel';
 import {InputTextModule} from 'primeng/inputtext';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { MessageService } from 'primeng/api';
+import { CartProductsComponent } from './products/cart-products/cart-products.component';
+import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
+import {BadgeModule} from 'primeng/badge';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckOutComponent } from './check-out/check-out.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +35,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductsComponent,
     AboutComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    CartProductsComponent,
+    CheckOutComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    BadgeModule,
+    DynamicDialogModule,
+    MessageModule,
+    MessagesModule,
     DataViewModule,
     ReactiveFormsModule,
     InputTextModule,
@@ -45,7 +59,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MessageService, DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
