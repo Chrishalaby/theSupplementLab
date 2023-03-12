@@ -14,6 +14,8 @@ export class CheckOutComponent {
   productsCart: Product[] = [];
   infoForm!: FormGroup;
   totalPrice = 0;
+  display: boolean = false;
+
   constructor(private readonly dynamicDialogConfig: DynamicDialogConfig,
     private formBuilder: FormBuilder,
     public ref: DynamicDialogRef,
@@ -42,7 +44,8 @@ export class CheckOutComponent {
       products: this.productsCart,
       totalPrice: this.totalPrice
     }
-    this.http.post(url, data).subscribe(() => alert('Check Out Complete!'));
+    this.http.post(url, data);
+    this.display = true;
     this.ref.close();
   }
 

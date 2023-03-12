@@ -27,6 +27,8 @@ import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
 import {BadgeModule} from 'primeng/badge';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckOutComponent } from './check-out/check-out.component';
+import {DialogModule} from 'primeng/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +39,10 @@ import { CheckOutComponent } from './check-out/check-out.component';
     ContactComponent,
     FooterComponent,
     CartProductsComponent,
-    CheckOutComponent
+    CheckOutComponent,
   ],
   imports: [
+    DialogModule,
     BrowserAnimationsModule,
     BadgeModule,
     DynamicDialogModule,

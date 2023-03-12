@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from 'primeng/dynamicdialog';
 
 export interface Contact {
   placeholder: string;
@@ -18,7 +19,9 @@ export class ContactComponent {
 
   contact!: Contact;
   contactForm!: FormGroup;
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
+  display: boolean = false;
+
+  constructor(private http: HttpClient, private formBuilder: FormBuilder, public dialogService: DialogService) { }
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
@@ -33,7 +36,8 @@ export class ContactComponent {
   submitForm() {
     console.log(this.contactForm.value);
     const url = 'https://formspree.io/f/xrgvlkjl';
-    this.http.post(url, this.contactForm.value).subscribe(() => alert('Message sent!'));
+    this.http.post(url, this.contactForm.value);
+    this.display = true;
   }
 
 }
