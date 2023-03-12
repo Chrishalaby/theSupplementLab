@@ -32,7 +32,7 @@ export class CheckOutComponent {
       placeHolder: 'Contact Form',
       name: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: '',
       message: ['', Validators.required]
     });
   }
