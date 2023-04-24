@@ -52,7 +52,7 @@
   </div>
 
   <p-carousel [value]="products" class="w-full" [numVisible]="3" [numScroll]="1" [circular]="true"
-  [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+  [autoplayInterval]="5000" [responsiveOptions]="responsiveOptions" [showNavigators]="false">
     <!-- <ng-template pTemplate="header">
         <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
     </ng-template> -->
@@ -62,15 +62,15 @@
                 <div class="mb-3">
                     <img [src]="'assets/images/' + product.image" [alt]="product.name" class="product-image"/>
                 </div>
-                <div>
+                <div class="flex flex-row justify-content-around">
+                  <div>
                     <h4 class="mb-1">{{product.name}}</h4>
                     <h6 class="mt-0 mb-3 font-bold text-xl">${{product.price}}</h6>
+                  </div>
+                  <div class="flex flex-column">
                     <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    <div class="car-buttons mt-5">
-                        <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
-                        <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
-                        <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
-                    </div>
+                    <p-button type="button" class="mt-1" styleClass="p-button-help p-button-rounded" icon="pi pi-info"></p-button>
+                  </div>
                 </div>
             </div>
         </div>

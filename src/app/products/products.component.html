@@ -1,59 +1,121 @@
 <div class="card">
-  <p-dataView #dv [value]="products" [paginator]="true" [rows]="9" filterBy="name"
-      [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
-      <ng-template pTemplate="header" >
-          <div class="flex flex-column md:flex-row md:justify-content-between" [formGroup]="formGroup">
-              <!-- <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)" styleClass="mb-2 md:mb-0"></p-dropdown> -->
-              <span class="p-input-icon-left mb-2 md:mb-0">
-                  <i class="pi pi-search"></i>
-                  <input type="search" pInputText placeholder="Search by Name" formControlName="search">
-              </span>
-              <div class="flex flex-row justify-content-between">
-                <p-button label="My Cart" class="md:mr-5" icon="pi pi-shopping-cart" (click)="showCart()"></p-button>
-                <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-              </div>
+  <p-dataView
+    #dv
+    [value]="products"
+    [paginator]="true"
+    [rows]="9"
+    filterBy="name"
+    [sortField]="sortField"
+    [sortOrder]="sortOrder"
+    layout="grid"
+  >
+    <ng-template pTemplate="header">
+      <div
+        class="flex flex-column md:flex-row md:justify-content-between"
+        [formGroup]="formGroup"
+      >
+        <p-dropdown
+          [options]="sortOptions"
+          placeholder="Category"
+          (onChange)="onSortChange($event)"
+          styleClass="mb-2 md:mb-0"
+          [showClear]="true"
+          class="uppercase"
+        ></p-dropdown>
+        <span class="p-input-icon-left mb-2 md:mb-0">
+          <i class="pi pi-search"></i>
+          <input
+            type="search"
+            pInputText
+            placeholder="Search by Name"
+            formControlName="search"
+          />
+        </span>
+        <div class="flex flex-row justify-content-between">
+          <p-button
+            label="My Cart"
+            class="md:mr-5"
+            icon="pi pi-shopping-cart"
+            (click)="showCart()"
+          ></p-button>
+          <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template let-product pTemplate="listItem">
+      <div class="col-12">
+        <div class="product-list-item">
+          <img
+            [src]="'assets/images/' + product.image[0]"
+            [alt]="product.name"
+          />
+          <div class="product-list-detail">
+            <div class="product-name uppercase">{{ product.name }}</div>
+            <div class="product-description">{{ product.description }}</div>
+            <!-- <p-rating [readonly]="true" [cancel]="false"></p-rating> -->
+            <i class="pi pi-tag product-category-icon"></i
+            ><span class="product-category">{{ product.category }}</span>
           </div>
-      </ng-template>
-      <ng-template let-product pTemplate="listItem">
-          <div class="col-12">
-              <div class="product-list-item">
-                  <img [src]="'assets/images/' + product.image" [alt]="product.name"/>
-                  <div class="product-list-detail">
-                      <div class="product-name">{{product.name}}</div>
-                      <div class="product-description">{{product.description}}</div>
-                      <!-- <p-rating [readonly]="true" [cancel]="false"></p-rating> -->
-                      <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{product.category}}</span>
-                  </div>
-                  <div class="product-list-action">
-                      <span class="product-price">${{product.price}}</span>
-                      <p-button icon="pi pi-shopping-cart" (click)="addToCart(product)" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-                      <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                  </div>
-              </div>
+          <div class="product-list-action">
+            <span class="product-price">${{ product.price }}</span>
+            <p-button
+              icon="pi pi-shopping-cart"
+              (click)="addToCart(product)"
+              label="Add to Cart"
+              [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
+            ></p-button>
+            <span
+              [class]="
+                'product-badge status-' + product.inventoryStatus.toLowerCase()
+              "
+              >{{ product.inventoryStatus }}</span
+            >
           </div>
-      </ng-template>
-      <ng-template let-product pTemplate="gridItem">
-          <div class="col-12 md:col-4">
-              <div class="product-grid-item card">
-                  <div class="product-grid-item-top">
-                      <div>
-                          <i class="pi pi-tag product-category-icon"></i>
-                          <span class="product-category">{{product.category}}</span>
-                      </div>
-                      <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                  </div>
-                  <div class="product-grid-item-content">
-                      <img [src]="'assets/images/'+ product.image" [alt]="product.name"/>
-                      <div class="product-name">{{product.name}}</div>
-                      <div class="product-description">{{product.description}}</div>
-                        <!-- <p-rating [stars]='5' [readonly]="true" [cancel]="false"></p-rating> -->
-                  </div>
-                  <div class="product-grid-item-bottom">
-                      <span class="product-price">${{product.price}}</span>
-                      <p-button icon="pi pi-shopping-cart" (click)="addToCart(product)" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-                  </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template let-product pTemplate="gridItem">
+      <div class="col-12 md:col-4">
+        <a
+          (click)="showProductOverview(product)"
+          style="color: white; text-decoration: none; cursor: pointer"
+        >
+          <div class="product-grid-item card">
+            <div class="product-grid-item-top">
+              <div class="flex flex-row gap-2">
+                <span class="product-category uppercase"
+                  >{{ product.type }}
+                </span>
+                <i class="pi pi-tag product-category-icon"></i>
               </div>
+              <span
+                [class]="
+                  'product-badge status-' +
+                  product.inventoryStatus.toLowerCase()
+                "
+                >{{ product.inventoryStatus }}</span
+              >
+            </div>
+            <div class="product-grid-item-content">
+              <img
+                [src]="'assets/images/' + product.image[0]"
+                [alt]="product.name"
+              />
+              <div class="product-name uppercase">{{ product.name }}</div>
+              <div class="product-description">{{ product.description }}</div>
+              <!-- <p-rating [stars]='5' [readonly]="true" [cancel]="false"></p-rating> -->
+            </div>
+            <div class="product-grid-item-bottom">
+              <span class="product-price">${{ product.price }}</span>
+              <p-button
+                icon="pi pi-shopping-cart"
+                (click)="addToCart(product)"
+                [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
+              ></p-button>
+            </div>
           </div>
-      </ng-template>
+        </a>
+      </div>
+    </ng-template>
   </p-dataView>
 </div>

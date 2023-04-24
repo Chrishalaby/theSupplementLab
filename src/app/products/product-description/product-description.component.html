@@ -1,0 +1,20 @@
+<section>
+  <form [formGroup]="productForm">
+    <div>
+      <img [src]="productsCart.image">
+    </div>
+    <div>
+      <h1>{{productsCart.name}}</h1>
+      <p>Price: {{this.productForm.get('sizes.price')?.value}}</p>
+      <p-dropdown [options]="this.productForm.get('sizes.name')?.value"  placeholder="" optionLabel="name"></p-dropdown>
+      <p-dropdown [options]="this.productForm.get('flavors')?.value"  placeholder="" optionLabel="name"></p-dropdown>
+
+      <span class="p-float-label">
+        <label for="float-input">Quantity</label>
+        <input id="float-input" type="text" [required]="true" pInputText formControlName="quantity">
+      </span>
+      <p-button icon="pi pi-shopping-cart" (click)="addToCart()" label="Add to Cart"></p-button>
+
+    </div>
+  </form>
+</section>

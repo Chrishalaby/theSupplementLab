@@ -1,89 +1,90 @@
 {
-  "data":[
+  "data": [
     {
-      "id":1,
-      "image":"6.png",
-      "name":"MASS GAINER",
-      "description": "stronk Grandma",
-      "price":"10",
-      "type":"Protein",
-      "inventoryStatus":"instock"
+      "id": 1,
+      "image": ["6.png", "5.png"],
+      "name": "MASS GAINER",
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "price": "10",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate", "Vanilla", "Strawberry"]
     },
     {
-      "id":2,
-      "image":"5.png",
-      "name":"PLANT BASED WHEY",
+      "id": 2,
+      "image": ["5.png"],
+      "name": "Core Champ",
       "description": "stronk Grandma",
-      "price":"10",
-      "type":"Protein",
-      "inventoryStatus":"lowstock"
+      "price": "10",
+      "type": "whey",
+      "inventoryStatus": "lowstock"
     },
     {
-      "id":3,
-      "image":"4.png",
-      "name":"WHEY",
+      "id": 3,
+      "image": ["4.png"],
+      "name": "WHEY",
       "description": "stronk Grandma",
-      "price":"20",
-      "type":"Protein",
-      "inventoryStatus":"outofstock"
+      "price": "20",
+      "type": "bcaa",
+      "inventoryStatus": "outofstock"
     },
     {
-      "id":4,
-      "image":"choco1.png",
-      "name":"SUGAR-FREE WHEY PROTEIN",
+      "id": 4,
+      "image": "choco1.png",
+      "name": "SUGAR-FREE WHEY PROTEIN",
       "description": "stronk Grandma",
-      "price":"20",
-      "type":"Accessory",
-      "inventoryStatus":"instock"
+      "price": "20",
+      "type": "creatine",
+      "inventoryStatus": "instock"
     },
     {
-      "id":5,
-      "image":"choco2.png",
-      "name":"WHEY PROTEIN",
+      "id": 5,
+      "image": "choco2.png",
+      "name": "WHEY PROTEIN",
       "description": "stronk Grandma",
-      "price":"20",
-      "type":"Accessory",
-      "inventoryStatus":"outofstock"
+      "price": "20",
+      "type": "Accessory",
+      "inventoryStatus": "outofstock"
     },
     {
-      "id":6,
-      "image":"choco3.png",
-      "name":"WHEY PROTEIN",
+      "id": 6,
+      "image": "choco3.png",
+      "name": "WHEY PROTEIN",
       "description": "stronk Grandma",
-      "price":"20",
-      "type":"Accessory",
-      "inventoryStatus":"instock"
+      "price": "20",
+      "type": "Accessory",
+      "inventoryStatus": "instock"
     },
     {
-      "id":7,
-      "image":"choco4.png",
-      "name":"WHEY PROTEIN",
+      "id": 7,
+      "image": "choco4.png",
+      "name": "WHEY PROTEIN",
       "description": "stronk Grandma",
-      "price":"20",
-      "type":"Accessory",
-      "inventoryStatus":"outofstock"
+      "price": "20",
+      "type": "Accessory",
+      "inventoryStatus": "outofstock"
     }
   ],
-  "brandIcons":[
+  "brandIcons": [
     {
-      "id":1,
-      "image":"brand1.png"
+      "id": 1,
+      "image": "brand1.png"
     },
     {
-      "id":2,
-      "image":"brand2.png"
+      "id": 2,
+      "image": "brand2.png"
     },
     {
-      "id":3,
-      "image":"brand3.png"
+      "id": 3,
+      "image": "brand3.png"
     },
     {
-      "id":4,
-      "image":"brand4.png"
+      "id": 4,
+      "image": "brand4.png"
     },
     {
-      "id":5,
-      "image":"brand5.png"
+      "id": 5,
+      "image": "brand5.png"
     }
   ]
 }
