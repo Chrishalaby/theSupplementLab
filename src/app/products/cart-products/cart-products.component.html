@@ -5,11 +5,13 @@
         label="Check Out"
         class="mb-2 md:mt-0"
         (click)="showCheckOut()"
+        [disabled]="productsCart.length === 0"
       ></p-button>
       <p-button
         label="Clear Cart"
         class="mb-2 md:mt-0"
         (click)="clearCart()"
+        [disabled]="productsCart.length === 0"
       ></p-button>
     </div>
   </ng-template>

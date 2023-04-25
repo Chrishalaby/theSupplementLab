@@ -49,12 +49,22 @@
             (onInput)="onQuantityChange($event)"
           ></p-inputNumber>
         </span>
-        <p-button
-          icon="pi pi-shopping-cart"
-          label="Add To Cart"
-          class="flex align-items-end"
-          (onClick)="addToCart()"
-        ></p-button>
+        <div class="flex flex-column gap-1">
+          <span
+            [class]="
+              'product-badge status-' +
+              productOverview.inventoryStatus.toLowerCase()
+            "
+            >{{ productOverview.inventoryStatus }}</span
+          >
+          <p-button
+            icon="pi pi-shopping-cart"
+            label="Add To Cart"
+            class="flex align-items-end"
+            (onClick)="addToCart()"
+            [disabled]="productOverview.inventoryStatus === 'outofstock'"
+          ></p-button>
+        </div>
       </div>
       <p-card header="Description" class="md:mt-6 mt-3">
         <p class="m-0">
