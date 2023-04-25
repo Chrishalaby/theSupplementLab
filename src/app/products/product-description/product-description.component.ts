@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { Product } from '../products.component';
+import { Product } from '../shared/model/cart.model';
 
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
-  styleUrls: ['./product-description.component.scss']
+  styleUrls: ['./product-description.component.scss'],
 })
 export class ProductDescriptionComponent {
-
   productsCart!: Product;
   productForm!: FormGroup;
-  constructor(private readonly dynamicDialogConfig: DynamicDialogConfig,
-    private formBuilder: FormBuilder) { }
+  constructor(
+    private readonly dynamicDialogConfig: DynamicDialogConfig,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.productsCart = this.dynamicDialogConfig.data;
@@ -25,7 +26,7 @@ export class ProductDescriptionComponent {
       type: [this.productsCart.type],
       flavors: [this.productsCart.flavors],
       sizes: [this.productsCart.sizes],
-      quantity: 1
+      quantity: 1,
     });
   }
 

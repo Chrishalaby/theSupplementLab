@@ -1,25 +1,44 @@
 <p-dataView [value]="productsCart" [paginator]="true" [rows]="3" layout="list">
   <ng-template pTemplate="header">
     <div class="flex flex-column md:flex-row justify-content-between">
-      <p-button label="Check Out" class="mb-2 md:mt-0" (click)="showCheckOut()"></p-button>
-      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+      <p-button
+        label="Check Out"
+        class="mb-2 md:mt-0"
+        (click)="showCheckOut()"
+      ></p-button>
+      <p-button
+        label="Clear Cart"
+        class="mb-2 md:mt-0"
+        (click)="clearCart()"
+      ></p-button>
     </div>
   </ng-template>
   <ng-template let-product pTemplate="listItem">
-  <div class="col-12">
+    <div class="col-12">
       <div class="product-list-item">
-          <img [src]="'assets/images/' + product.image" [alt]="product.name"/>
-          <div class="product-list-detail">
-              <div class="product-name">{{product.name}}</div>
-              <div class="product-description">{{product.description}}</div>
-              <!-- <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{product.category}}</span> -->
-          </div>
-          <div class="product-list-action flex flex-column flex-row">
-              <span class="product-price">${{product.price}}</span>
-              <p-button icon="pi pi-shopping-cart" (click)="removeFromCart(product)" label="Remove From Cart"></p-button>
-              <!-- <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
-          </div>
+        <img [src]="'assets/images/' + product.image[0]" [alt]="product.name" />
+        <div class="product-list-detail">
+          <div class="product-name">{{ product.name }}</div>
+        </div>
+        <div
+          class="product-list-action flex flex-column gap-3 align-items-center"
+        >
+          <span class="flex align-self-end"
+            >Flavor: {{ product.chosenFlavor }}</span
+          >
+          <span class="flex align-self-end">
+            Quantity: {{ product.quantity }}
+          </span>
+          <span class="product-price"
+            >Price: ${{ product.price * product.quantity }}</span
+          >
+          <p-button
+            icon="pi pi-shopping-cart"
+            (click)="removeFromCart(product)"
+            label="Remove From Cart"
+          ></p-button>
+        </div>
       </div>
-  </div>
+    </div>
   </ng-template>
 </p-dataView>

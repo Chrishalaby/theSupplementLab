@@ -4,7 +4,6 @@
       [value]="productOverview.image"
       [responsiveOptions]="responsiveOptions"
       [containerStyle]="{ 'max-width': '640px' }"
-      [numVisible]="2"
       [showThumbnailNavigators]="false"
       [showThumbnails]="false"
       [showItemNavigators]="true"
@@ -12,15 +11,11 @@
       <ng-template pTemplate="item" let-item>
         <img
           [src]="'assets/images/' + item"
-          style="width: 100%"
+          style="width: 70%"
           [alt]="productOverview.name"
         />
       </ng-template>
     </p-galleria>
-    <!-- <img
-      [src]="'assets/images/' + productOverview.image"
-      [alt]="productOverview.name"
-    /> -->
   </div>
   <div class="md:col-6 col-12">
     <div class="flex gap-2 flex-column">
@@ -28,17 +23,16 @@
         {{ productOverview.name }}
       </h1>
       <p class="text-4xl font-bold">${{ productOverview.price }}</p>
-      <div class="mt-6 flex flex-column gap-2">
-        <p>Flavor:</p>
+      <div class="md:mt-6 mt-2 flex flex-column gap-2">
+        <p>Flavor</p>
         <p-dropdown
           [options]="productOverview.flavors"
           placeholder="{{ productOverview.flavor }}"
           (onChange)="onFlavorChange($event)"
-          styleClass="mb-2 md:mb-0"
         ></p-dropdown>
       </div>
       <div
-        class="mt-4 flex md:flex-row flex-column justify-content-between gap-4"
+        class="md:mt-4 mt-2 flex md:flex-row flex-column justify-content-between gap-4"
       >
         <span class="flex flex-column gap-2">
           <p>Quantity</p>
@@ -59,9 +53,10 @@
           icon="pi pi-shopping-cart"
           label="Add To Cart"
           class="flex align-items-end"
+          (onClick)="addToCart()"
         ></p-button>
       </div>
-      <p-card header="Description" class="mt-6">
+      <p-card header="Description" class="md:mt-6 mt-3">
         <p class="m-0">
           {{ productOverview.description }}
         </p>

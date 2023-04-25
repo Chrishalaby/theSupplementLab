@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="card">
   <p-dataView
     #dv
@@ -44,34 +45,39 @@
     </ng-template>
     <ng-template let-product pTemplate="listItem">
       <div class="col-12">
-        <div class="product-list-item">
-          <img
-            [src]="'assets/images/' + product.image[0]"
-            [alt]="product.name"
-          />
-          <div class="product-list-detail">
-            <div class="product-name uppercase">{{ product.name }}</div>
-            <div class="product-description">{{ product.description }}</div>
-            <!-- <p-rating [readonly]="true" [cancel]="false"></p-rating> -->
-            <i class="pi pi-tag product-category-icon"></i
-            ><span class="product-category">{{ product.category }}</span>
-          </div>
-          <div class="product-list-action">
-            <span class="product-price">${{ product.price }}</span>
-            <p-button
+        <a
+          (click)="showProductOverview(product)"
+          style="color: white; text-decoration: none; cursor: pointer"
+        >
+          <div class="product-list-item">
+            <img
+              [src]="'assets/images/' + product.image[0]"
+              [alt]="product.name"
+            />
+            <div class="product-list-detail">
+              <div class="product-name uppercase">{{ product.name }}</div>
+              <div class="product-description">{{ product.description }}</div>
+              <i class="pi pi-tag product-category-icon"></i
+              ><span class="product-category">{{ product.category }}</span>
+            </div>
+            <div class="product-list-action">
+              <span class="product-price">${{ product.price }}</span>
+              <!-- <p-button
               icon="pi pi-shopping-cart"
               (click)="addToCart(product)"
               label="Add to Cart"
               [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-            ></p-button>
-            <span
-              [class]="
-                'product-badge status-' + product.inventoryStatus.toLowerCase()
-              "
-              >{{ product.inventoryStatus }}</span
-            >
+            ></p-button> -->
+              <span
+                [class]="
+                  'product-badge status-' +
+                  product.inventoryStatus.toLowerCase()
+                "
+                >{{ product.inventoryStatus }}</span
+              >
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </ng-template>
     <ng-template let-product pTemplate="gridItem">
@@ -103,15 +109,14 @@
               />
               <div class="product-name uppercase">{{ product.name }}</div>
               <div class="product-description">{{ product.description }}</div>
-              <!-- <p-rating [stars]='5' [readonly]="true" [cancel]="false"></p-rating> -->
             </div>
             <div class="product-grid-item-bottom">
               <span class="product-price">${{ product.price }}</span>
-              <p-button
+              <!-- <p-button
                 icon="pi pi-shopping-cart"
                 (click)="addToCart(product)"
                 [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-              ></p-button>
+              ></p-button> -->
             </div>
           </div>
         </a>

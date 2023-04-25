@@ -12,57 +12,13 @@
     },
     {
       "id": 2,
-      "image": ["5.png"],
-      "name": "Core Champ",
-      "description": "stronk Grandma",
-      "price": "10",
-      "type": "whey",
-      "inventoryStatus": "lowstock"
-    },
-    {
-      "id": 3,
-      "image": ["4.png"],
-      "name": "WHEY",
-      "description": "stronk Grandma",
-      "price": "20",
-      "type": "bcaa",
-      "inventoryStatus": "outofstock"
-    },
-    {
-      "id": 4,
-      "image": "choco1.png",
-      "name": "SUGAR-FREE WHEY PROTEIN",
-      "description": "stronk Grandma",
+      "image": ["5.png", "6.png"],
+      "name": "Creatine",
+      "description": "This is a randome description for creatine",
       "price": "20",
       "type": "creatine",
-      "inventoryStatus": "instock"
-    },
-    {
-      "id": 5,
-      "image": "choco2.png",
-      "name": "WHEY PROTEIN",
-      "description": "stronk Grandma",
-      "price": "20",
-      "type": "Accessory",
-      "inventoryStatus": "outofstock"
-    },
-    {
-      "id": 6,
-      "image": "choco3.png",
-      "name": "WHEY PROTEIN",
-      "description": "stronk Grandma",
-      "price": "20",
-      "type": "Accessory",
-      "inventoryStatus": "instock"
-    },
-    {
-      "id": 7,
-      "image": "choco4.png",
-      "name": "WHEY PROTEIN",
-      "description": "stronk Grandma",
-      "price": "20",
-      "type": "Accessory",
-      "inventoryStatus": "outofstock"
+      "inventoryStatus": "lowstock",
+      "flavors": ["Vanilla", "Strawberry"]
     }
   ],
   "brandIcons": [

@@ -29,24 +29,18 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CartProductsComponent } from './products/cart-products/cart-products.component';
 import { ProductDescriptionComponent } from './products/product-description/product-description.component';
-import { ProductOverviewComponent } from './products/product-overview/product-overview.component';
-import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    ProductsComponent,
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    CartProductsComponent,
     CheckOutComponent,
     ProductDescriptionComponent,
-    ProductOverviewComponent,
   ],
   imports: [
     CardModule,
