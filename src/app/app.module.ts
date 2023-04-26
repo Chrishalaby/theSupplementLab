@@ -24,12 +24,10 @@ import { RippleModule } from 'primeng/ripple';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CheckOutComponent } from './check-out/check-out.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ProductDescriptionComponent } from './products/product-description/product-description.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +37,6 @@ import { ProductDescriptionComponent } from './products/product-description/prod
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    CheckOutComponent,
-    ProductDescriptionComponent,
   ],
   imports: [
     CardModule,

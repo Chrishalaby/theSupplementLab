@@ -9,3 +9,12 @@ export interface Product {
   sizes: object;
   quantity: number;
 }
+
+export interface User {
+  name: string;
+  phoneNumber: number;
+  address: string;
+  addressExtra: string;
+  email: string;
+  message: string;
+}

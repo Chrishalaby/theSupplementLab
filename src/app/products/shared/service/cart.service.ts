@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../model/cart.model';
+import { Product, User } from '../model/cart.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   myCart: Product[] = [];
+  userInfo: User | undefined;
 
   constructor() {}
 
@@ -24,5 +25,13 @@ export class CartService {
 
   removeItem(item: Product): void {
     this.myCart.splice(this.myCart.indexOf(item), 1);
+  }
+
+  setUserInfo(userInfo: User): void {
+    this.userInfo = userInfo;
+  }
+
+  getUserInfo(): User | undefined {
+    return this.userInfo;
   }
 }

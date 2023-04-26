@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { DataViewModule } from 'primeng/dataview';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { CheckOutComponent } from 'src/app/check-out/check-out.component';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Product } from '../shared/model/cart.model';
 import { CartService } from '../shared/service/cart.service';
 
@@ -17,9 +17,9 @@ export class CartProductsComponent {
   productsCart: Product[] = [];
 
   constructor(
-    public dialogService: DialogService,
     public ref: DynamicDialogRef,
-    private cartService: CartService
+    private cartService: CartService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,11 +37,7 @@ export class CartProductsComponent {
   }
 
   showCheckOut() {
-    this.dialogService.open(CheckOutComponent, {
-      data: this.productsCart,
-      header: 'CheckOut',
-      width: '90%',
-    });
+    this.router.navigate(['/user-info']);
     this.ref.close();
   }
 }
