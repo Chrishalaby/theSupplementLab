@@ -31,12 +31,13 @@
           pInputText
           class="w-full"
         />
-        <input
+        <p-inputNumber
           placeholder="*Phone Number"
           formControlName="phoneNumber"
           class="w-full"
-          pInputText
-        />
+          mode="decimal"
+          [useGrouping]="false"
+        ></p-inputNumber>
       </div>
 
       <div>

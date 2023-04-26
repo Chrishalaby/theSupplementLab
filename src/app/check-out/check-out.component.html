@@ -37,8 +37,8 @@
       </div>
     </div>
     <div class="mt-5 mb-8 flex flex-column">
-      <div class="mb-3 text-2xl font-medium">BILL TO</div>
-      <span class="mb-2">{{ userInfo?.addressExtra }}</span
+      <div class="text-2xl font-medium">BILL TO</div>
+      <span class="mb-1">{{ userInfo?.addressExtra }}</span
       ><span>{{ userInfo?.address }}</span>
     </div>
     <div class="overflow-x-auto">
@@ -71,27 +71,22 @@
           </tr>
         </thead>
         <tbody>
-          <div
-            *ngFor="let product of productsCart"
-            class="flex flex-row justify-content-between"
-          >
-            <tr>
-              <td
-                class="text-left py-3 border-bottom-1 surface-border white-space-nowrap"
-              >
-                {{ product.name }}
-              </td>
-              <td class="text-right py-3 border-bottom-1 surface-border px-3">
-                {{ product.quantity }}
-              </td>
-              <td class="text-right py-3 border-bottom-1 surface-border px-3">
-                ${{ product.price }}
-              </td>
-              <td class="text-right py-3 border-bottom-1 surface-border">
-                ${{ product.price * product.quantity }}
-              </td>
-            </tr>
-          </div>
+          <tr *ngFor="let product of productsCart">
+            <td
+              class="text-left py-3 border-bottom-1 surface-border white-space-nowrap"
+            >
+              {{ product.name }}
+            </td>
+            <td class="text-right py-3 border-bottom-1 surface-border px-3">
+              {{ product.quantity }}
+            </td>
+            <td class="text-right py-3 border-bottom-1 surface-border px-3">
+              ${{ product.price }}
+            </td>
+            <td class="text-right py-3 border-bottom-1 surface-border">
+              ${{ product.price * product.quantity }}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

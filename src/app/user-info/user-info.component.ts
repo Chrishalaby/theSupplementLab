@@ -10,10 +10,10 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { CartService } from '../products/shared/service/cart.service';
-
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -26,6 +26,7 @@ import { CartService } from '../products/shared/service/cart.service';
     ReactiveFormsModule,
     CardModule,
     ToastModule,
+    InputNumberModule,
   ],
   providers: [MessageService],
 })
@@ -43,7 +44,7 @@ export class UserInfoComponent {
   ngOnInit(): void {
     this.infoForm = this.formBuilder.group({
       name: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: [null, Validators.required],
       address: ['', Validators.required],
       addressExtra: [''],
       email: ['', Validators.email],

@@ -29,6 +29,7 @@ export class CheckOutComponent {
   displayDialog = false;
 
   date = new Date().toLocaleDateString().split('/').join('-');
+
   invoiceNumber = Math.floor(Math.random() * 1000000);
   customerId = Math.floor(Math.random() * 1000000);
 
@@ -56,6 +57,8 @@ export class CheckOutComponent {
       userInfo: this.userInfo,
       products: this.productsCart,
       totalPrice: this.totalPrice,
+      invoice: this.invoiceNumber,
+      customerId: this.customerId,
     };
     this.http.post(url, data);
     this.displayDialog = true;
