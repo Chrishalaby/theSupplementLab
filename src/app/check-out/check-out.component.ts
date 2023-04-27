@@ -9,6 +9,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { Product, User } from '../products/shared/model/cart.model';
 import { CartService } from '../products/shared/service/cart.service';
 
+interface CartItem {
+  id: number;
+  quantity: number;
+  chosenFlavor: string;
+}
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
@@ -35,10 +40,13 @@ export class CheckOutComponent {
   invoiceNumber = Math.floor(Math.random() * 1000000);
   customerId = Math.floor(Math.random() * 1000000);
 
+  cartItems: CartItem[] = [];
+
   constructor(private cartService: CartService, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.productsCart = this.cartService.getCartItems();
+    this.cartItems = this.getOrderDetails();
     this.userInfo = this.cartService.getUserInfo();
 
     this.calculateTotalPrice();
@@ -53,11 +61,21 @@ export class CheckOutComponent {
     );
   }
 
+  getOrderDetails() {
+    return this.productsCart.map((product: Product) => {
+      return {
+        id: product.id,
+        quantity: product.quantity,
+        chosenFlavor: product.chosenFlavor,
+      };
+    });
+  }
+
   checkOut() {
     const url = 'https://formspree.io/f/xnqyzvez';
     const data = {
       userInfo: this.userInfo,
-      products: this.productsCart,
+      products: this.cartItems,
       totalPrice: this.totalPrice,
       invoice: this.invoiceNumber,
       customerId: this.customerId,

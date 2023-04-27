@@ -10,6 +10,10 @@ export interface Product {
   quantity: number;
 }
 
+export interface chosenProduct {
+  id: number;
+}
+
 export interface User {
   name: string;
   phoneNumber: number;
