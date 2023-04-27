@@ -47,7 +47,7 @@ export class UserInfoComponent {
       phoneNumber: [null, Validators.required],
       address: ['', Validators.required],
       addressExtra: [''],
-      email: ['', Validators.email],
+      // email: ['', Validators.email],
       message: [''],
       // country: [''],
     });

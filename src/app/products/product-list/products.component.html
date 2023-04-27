@@ -57,8 +57,13 @@
             <div class="product-list-detail">
               <div class="product-name uppercase">{{ product.name }}</div>
               <div class="product-description">{{ product.description }}</div>
-              <i class="pi pi-tag product-category-icon"></i
-              ><span class="product-category">{{ product.category }}</span>
+              <div class="flex flex-row gap-2">
+                <span class="product-category uppercase"
+                  >{{ product.type }}
+                </span>
+                <i class="pi pi-tag product-category-icon"></i>
+              </div>
+              <span class="product-category">{{ product.category }}</span>
             </div>
             <div class="product-list-action">
               <span class="product-price">${{ product.price }}</span>

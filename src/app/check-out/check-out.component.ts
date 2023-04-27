@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
@@ -19,6 +20,7 @@ import { CartService } from '../products/shared/service/cart.service';
     CommonModule,
     InputTextModule,
     CardModule,
+    ButtonModule,
   ],
 })
 export class CheckOutComponent {
@@ -60,7 +62,7 @@ export class CheckOutComponent {
       invoice: this.invoiceNumber,
       customerId: this.customerId,
     };
-    this.http.post(url, data);
+    this.http.post(url, data).subscribe();
     this.displayDialog = true;
   }
 }
