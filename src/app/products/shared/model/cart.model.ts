@@ -22,3 +22,10 @@ export interface User {
   email: string;
   message: string;
 }
+
+export interface Offer {
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+}

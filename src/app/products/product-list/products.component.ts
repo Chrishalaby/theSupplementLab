@@ -95,10 +95,18 @@ export class ProductsComponent {
     }
     this.httpClient.get<any>('assets/products.json').subscribe((products) => {
       if (this.isNull == true) {
-        this.products = products.data.filter(
-          (product: Product) =>
-            product.type === this.sortedCategory.toLowerCase()
-        );
+        this.products = products.data.filter((product: Product) => {
+          if (Array.isArray(product.type)) {
+            return product.type.some(
+              (type) => type.toLowerCase() === this.sortedCategory.toLowerCase()
+            );
+          } else {
+            return (
+              product.type.toLowerCase() === this.sortedCategory.toLowerCase()
+            );
+          }
+        });
+
         this.isNull = false;
       } else {
         this.products = products.data;

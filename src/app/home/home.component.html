@@ -1,35 +1,24 @@
 <section class="line-height-3 text-center">
   <div
-    class="flex flex-column md:flex-row md:justify-content-around align-items-center w-12"
-    style="
-      background-image: url(assets/images/home.jpg);
-      color: white;
-      background-repeat: no-repeat;
-      background-size: cover;
-    "
+    class="flex flex-column md:flex-row md:justify-content-around align-items-center w-12 homeImage"
   >
     <div class="align-self-center w-8 md:w-4 mt-4 md:mt-0">
       <h1 class="text-4xl md:text-7xl text-left">20% OFF SALE</h1>
-      <p class="line-height-3 md:text-lg mt-3 md:mt-0 text-left">
+      <p class="line-height-3 md:text-lg mt-3 md:mt-0 text-left mb-2">
         Our pure whey protein sourced & made in the USA from grass-fed cows.
         Made from Non-GMO ingredients. No artificial flavors, colors, or
         sweeteners. Keto-friendly options. 100% clean whey crafted in our
         certified gluten-free facility and Certified Vegetarian by the AVA. Shop
         today and get an extra 20% OFF your order with code PROTEIN
       </p>
-      <button
-        pButton
-        pRipple
+      <p-button
         type="button"
         label="SHOP NOW"
         [routerLink]="['/products']"
-        class="p-button-outlined mt-3"
-      ></button>
+      ></p-button>
     </div>
-    <!-- <div class="mt-0 md:mt-8 w-9 md:w-1 ml-0 md:ml-6 flex align-self-center"> -->
-    <!-- <img src="assets/images/background.png" alt="Supplements" class="mt-8 w-12 md:w-10"/> -->
     <p-carousel
-      [value]="products"
+      [value]="offers"
       class="w-9 md:w-3 my-2 md:my-8"
       [numVisible]="1"
       [numScroll]="1"
@@ -43,26 +32,19 @@
           <div class="product-item-content">
             <div class="mb-3">
               <img
-                [src]="'assets/images/' + product.image"
+                [src]="'assets/images/OFFERS/' + product.image"
                 [alt]="product.name"
                 class="product-image"
               />
             </div>
             <div>
-              <h4 class="mb-1">{{ product.name }}</h4>
-              <h6 class="mt-0 mb-3 font-bold text-xl">${{ product.price }}</h6>
-              <!-- <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
-              <!-- <div class="car-buttons mt-5">
-                    <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
-                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
-                    <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
-                </div> -->
+              <h2>{{ product.name }}</h2>
+              <h3 class="font-bold text-xl">${{ product.price }}</h3>
             </div>
           </div>
         </div>
       </ng-template>
     </p-carousel>
-    <!-- </div> -->
   </div>
 
   <div class="text-center mt-8">
@@ -78,7 +60,7 @@
   </div>
 
   <p-carousel
-    [value]="products"
+    [value]="offers"
     class="w-full"
     [numVisible]="3"
     [numScroll]="1"
@@ -87,17 +69,14 @@
     [responsiveOptions]="responsiveOptions"
     [showNavigators]="false"
   >
-    <!-- <ng-template pTemplate="header">
-        <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
-    </ng-template> -->
     <ng-template let-product pTemplate="item">
       <div class="product-item">
-        <div class="product-item-content">
+        <div class="product-item-content item-dark">
           <div class="mb-3">
             <img
-              [src]="'assets/images/' + product.image"
+              [src]="'assets/images/OFFERS/' + product.image"
               [alt]="product.name"
-              class="product-image"
+              class="product-image image-dark"
             />
           </div>
           <div class="flex flex-row justify-content-around">
@@ -105,21 +84,21 @@
               <h4 class="mb-1">{{ product.name }}</h4>
               <h6 class="mt-0 mb-3 font-bold text-xl">${{ product.price }}</h6>
             </div>
-            <div class="flex flex-column">
-              <span
+            <!-- <div class="flex flex-column"> -->
+            <!-- <span
                 [class]="
                   'product-badge status-' +
                   product.inventoryStatus.toLowerCase()
                 "
                 >{{ product.inventoryStatus }}</span
-              >
-              <p-button
+              > -->
+            <!-- <p-button
                 type="button"
                 class="mt-1"
                 styleClass="p-button-help p-button-rounded"
                 icon="pi pi-info"
-              ></p-button>
-            </div>
+              ></p-button> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -136,11 +115,11 @@
   ></button>
   <div class="my-4">
     <h3 class="text-2xl">Our Brands</h3>
-    <div class="flex flex-row justify-content-around mt-2">
+    <div class="flex flex-row flex-wrap justify-content-around mt-2">
       <div *ngFor="let brands of brandIcons">
         <img
-          [src]="'assets/images/brandsIcons/' + brands.image"
-          class="h-7rem w-8rem"
+          [src]="'assets/images/LOGOS/' + brands.image"
+          class="md:h-6rem md:w-7rem h-3rem w-4rem"
         />
       </div>
     </div>

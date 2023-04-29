@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { tap } from 'rxjs';
-import { Product } from '../products/shared/model/cart.model';
+import { Offer, Product } from '../products/shared/model/cart.model';
 
 export interface BrandIcons {
   id: number;
@@ -13,7 +13,7 @@ export interface BrandIcons {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  products: Product[] = [];
+  offers: Offer[] = [];
   responsiveOptions = [
     {
       breakpoint: '1024px',
@@ -37,10 +37,10 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.httpClient
-      .get<Product>('assets/products.json')
+      .get<Product>('assets/offers.json')
       .pipe(
         tap((products: any) => {
-          this.products = products.data;
+          this.offers = products.offers;
         })
       )
       .subscribe();

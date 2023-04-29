@@ -2,45 +2,425 @@
   "data": [
     {
       "id": 1,
-      "image": ["6.png", "5.png"],
-      "name": "MASS GAINER",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "price": "10",
-      "type": "whey",
+      "image": ["CORECHAMPS_CREATINE300.png", "CORECHAMPS_CREATINE300NF.JPG"],
+      "name": "Core Champs Creatine Monohydrate 5000mg 60 Servings",
+      "description": "Core Champs Creatine Monohydrate is 100% pure, flavorless, micronized creatine monohydrate  with no fillers or additives. Creatine is a naturally occurring molecule in the body that plays a key role in explosive energy metabolism. It helps to drive periods of short burst power output; like the first few reps in a set, or the explosive drive from the starting blocks. During exercise, intramuscular stores of creatine reload ATP molecules, the “energy machines of muscle”, for last between-set recovery. Unfortunately, the creatine produced by the body is available only in limited supply. Supplementing with Core Champs Creatine Monohydrate helps to supersaturate muscles with rapid-fueling  creatine - improved muscle power, explosive strength, and rapid recovery.Creatine supplements increase your phosphocreatine stores, allowing you to produce more ATP energy to fuel your muscles during high-intensity exercise. This is the primary mechanism behind creatine's performance-enhancing effects. improves high-intensity exercise performance.It`s better to take creatine immediately before or after your workout. It`s also good to include in your recovery shake or post-workout meal, when muscles are growing and rebuilding. SUGGESTED USE:Take as a dietary supplement, mix 1 scoop (5g) of Core Champs Creatine Monohydrate 5000mg with 8-10 oz of water, preferably prior to exercise.",
+      "price": "20",
+      "type": "creatine",
       "inventoryStatus": "instock",
-      "flavors": ["Chocolate", "Vanilla", "Strawberry"]
+      "flavors": ["UNFLAVORED"]
     },
     {
       "id": 2,
-      "image": ["5.png", "6.png"],
-      "name": "Creatine",
-      "description": "This is a randome description for creatine",
+      "image": [
+        "DEXTERJACKSON_CREATINE300.png",
+        "DEXTERJACKSON_CREATINE300NF.JPG"
+      ],
+      "name": "Dexter Jackson Creatine 5000mg - 60 Servings Creatine Micronized",
+      "description": "Dexter Jackson Creatine 5000mg - Creatine has been extensively studied and shown to help support muscle size, strength, and recovery when used consistently over time in conjunction with a healthy, balanced diet and regular weight training. Creatine monohydrate is a popular and effective supplement for adding muscle mass. DEXTER JACKSON Creatine micronized supplement can increase both short- and long-term muscle growth. It is the most effective muscle-building supplement available. Supplementing with Creatine micronized additional ATP energy, which improves high-intensity exercise performance. It`s not only safe but also one of the world`s most popular and effective supplements for building muscle and strength.Creatine Monohydrate supplementation can indeed increase muscular strength and power. Creatine monohydrate supplements also increased the quality of the athletes` efforts during the three-interval workouts. Creatine monohydrate supplementation can indeed increase muscular strength and power and improve performances in relatively short-duration, high-intensity activities. 5g Pure Micronized Creatine Per Serving-60 Servings. Help to increase Strength, Build Muscle and endurance. SUGGESTED USE: Mix about 1 scoop (3grams) of Dexter Jackson Creatine 5000mg powder with 8-12 oz. of water, fruit juices, or your favorite beverages. And then shake or stir for 10-30 seconds until the powder is mixed. Consume before, during, or after training.",
       "price": "20",
       "type": "creatine",
-      "inventoryStatus": "outofstock",
-      "flavors": ["Vanilla", "Strawberry"]
+      "inventoryStatus": "instock",
+      "flavors": ["UNFLAVORED"]
+    },
+    {
+      "id": 3,
+      "image": [
+        "PROSCIENCENUTRA_CREATINE300.png",
+        "PROSCIENCENUTRA_CREATINE300NF.JPG"
+      ],
+      "name": "ProScience Creatine 5000mg Creatine Monohydrate 60 Servings",
+      "description": "Creatine is a naturally occurring molecule in the body that plays a key role in explosive energy metabolism. It helps to drive periods of short burst power output; like the first few reps in a set, or the explosive drive from the starting blocks. During exercise, intramuscular stores of creatine reload ATP molecules, the “energy machine of muscle”, for last between-set recovery.Creatine supplements increase your phosphocreatine stores, allowing you to produce more ATP energy to fuel your muscles during high-intensity exercise. This is the primary mechanism behind creatine's performance-enhancing effects. improves high-intensity exercise performance.The most common is creatine monohydrate, a dietary supplement that increases muscle performance in short-duration, high-intensity resistance exercises. Studies show that taking these supplements benefit athletes during strength training, notably weightlifting and cycling. SUGGESTED USE:Take as a dietary supplement, mix 1 scoop (5g) of ProScience Creatine Monohydrate 5000mg with 8-10 oz of water, preferably prior to exercise.",
+      "price": "18",
+      "type": "creatine",
+      "inventoryStatus": "instock",
+      "flavors": ["UNFLAVORED"]
+    },
+    {
+      "id": 4,
+      "image": [
+        "KEVINLEVRONGOLD_CREATINE300.png",
+        "KEVINLEVRONGOLD_CREATINE300NF.JPG"
+      ],
+      "name": "Kevin Levrone Gold Creatine 300 G",
+      "description": "LEVRONE GOLD CREATINE. Food supplement. Supplementing the diet with creatine, recommended for adults performing high intensity exercise. Creatine increases physical performance in successive bursts of short-term, high intensity exercise, bene_cial efect is obtained with a daily intake of 3 g of creatine. Vitamin B6 contributes to the normal function of the immune system and also contributes to the reduction of tiredness and fatigue**. Ingredients: Creatine monohydrate, vitamin B6 (pyridoxine hydrochloride). SUGGESTED USE: Take as a dietary supplement, mix 1 scoop (5g) of Kevin Levron Gold Creatine Monohydrate 5000mg with 8-10 oz of water, preferably prior to exercise.",
+      "price": "22",
+      "type": "creatine",
+      "inventoryStatus": "instock",
+      "flavors": ["UNFLAVORED"]
+    },
+    {
+      "id": 5,
+      "image": ["CORECHAMPS_WHEY.png", "CORECHAMPS_WHEYNF.JPG"],
+      "name": "Core Champs WHEY 100% Whey Protein 5 LBS",
+      "description": "Core Champs WHEY 100% Whey Protein offers the perfect mix for superior quality protein with great taste. Protein contributes to the growth and maintenance of muscle mass and bones. Proteins are the source of amino acids in the human body. Some of these amino acids are essential, so we have to consume them with our foods. Protein delivered from whey is an excellent source of amino acids(for example BCAAs). Each scoop provides 26 grams of protein-packed with naturally occurring BCAAs and Glutamine. Protein is a vital dietary supplement for any muscle building or weight loss program, providing your muscle with the necessary fuel for Lean muscle building, performance, and recovery. SUGGESTED USE: As a protein supplement, mix 1 scoop (35g) of CORE CHAMPS WHEY with 8-10 oz of cold water and mix thoroughly in a shaker or blender. For the best results, spread protein usage between several smaller meals throughout the day.",
+      "price": "55",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate", "Vanilla", "Cookies & Cream"]
+    },
+    {
+      "id": 6,
+      "image": ["BPIHD_WHEY.png", "BPIHD_WHEYNF.JPG"],
+      "name": "Bpi Sports WHEY HD Whey Protein 50 Servings",
+      "description": "BPI Sports WHEY HD features multiple quality proteins resulting in a nutritious and multi-functional protein supplement that ensures a superior bio-available protein source for athlete muscle. WHEY HD also includes a unique enzyme formulation to support the digestion of protein, and delivers 5 grams of branched chain amino acids per serving to counter muscle protein breakdown. WHEY HD can be taken immediately after workouts and throughout the day to promote recovery, satisfy hunger and help build strong muscles. Try to compare our protein to others...there's no doubt that WHEY HD raises the bar in sports supplement category. SUGGESTED USE: Mix thoroughly in 5 to 6 ounces of ice cold water and drink immediately after workout or strenuous activity. May also be taken anytime to promote recovery and help build strong muscles.For optimal results, use in conjunction with a proper diet and always consult with a physician prior to beginning a training regimen.",
+      "price": "50",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 7,
+      "image": ["PROSCIENCENUTRA_WHEY.png", "PROSCIENCENUTRA_WHEYNF.JPG"],
+      "name": "ProScience 100% WHEY Anabolic Whey Protein Isolate ",
+      "description": "ProScience 100% WHEY Protein Isolate is a perfect blend of premium whey concentrate and ultra-pure whey isolate. This advance whey protein contributes to muscle maintenance, buildup and toning for beginner to hardcore bodybuilder. Furthermore, it provide support for muscle growth and tissue repair. ProScience 100% WHEY Protein Isolate 73 servings fuels muscle growth with 23 grams of premium anabolic whey protein packed with natural occurring 7 grams BCAAs, and 5 grams Glutamine. Protein is a vital supplementfor any muscle building or weight loss program, providing your muscle with the necessaryfuels for lean muscle building, performance and recovery. SUGGESTED USE:Mix about 1 scoop with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily. ",
+      "price": "50",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 8,
+      "image": [
+        "DEXTERJACKSONLEGEND_WHEY.png",
+        "DEXTERJACKSONLEGEND_WHEYNF.JPG"
+      ],
+      "name": "Dexter Jackson Legend Whey Protein 5 lbs 76 Servings",
+      "description": "Dexter Jackson Legend Whey Protein-Very few proteins completely change the game, and for years bodybuilders were given very few options for protein sources that were scientifically formulated to help build more muscle. As a result, for years you could basically change protein brands every month and see no difference in gains at all.This changed with the launch of Dexter Jackson Legend Whey.  Researchers invested countless hours working with the legend Dexter jackson to create a protein formula that packs on more muscle and builds more strength than regular whey protein.Legend Whey uses whey protein isolate derivates as the main ingredient, as this is one of the purest sources of protein an athlete can make use of. The product also packs the most researched creatine formula designed for a maximum increase in muscle and strength. SUGGESTED USE:Mix about 1 scoop of Dexter Jackson Legend Whey protein with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily..",
+      "price": "70",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 9,
+      "image": ["NITROTECH_WHEY.png", "NITROTECH_WHEYNF.JPG"],
+      "name": "Muscletech Nitro-Tech Whey Protein 4 lbs Whey Protein with Creatine",
+      "description": "Muscletech Nitro-Tech Whey Protein contains a research-proven 3g dose of creatine monohydrate, which - combined with whey protein - helps to build more strength than regular whey protein. In a breakthrough study, subjects using the core ingredient combination in NITRO-TECH increased their 1-rep max bench press by 34 lbs., compared to only 14 lbs. for subjects using regular whey protein. Regular whey protein is good, but the core ingredients in Muscletech Nitro-Tech Whey Protein are shown to be superior to regular whey protein. In the same 6-week study, subjects using the core ingredients in NITRO-TECH gained more lean muscle than subjects using regular whey protein (8.8 vs. 5.1 lbs.) and gained 2 times the strength on the bench press than subjects using regular whey protein (34 vs. 14 lbs.). View the full study here.SUGGESTED USE:Mix about 1 scoop with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily..",
+      "price": "55",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 10,
+      "image": ["GOLDON_WHEY.png", "GOLDON_WHEYNF.JPG"],
+      "name": "Optimum Nutrition 100% Whey Gold Standard 5 lbs Whey Protein",
+      "description": "Whey Protein Isolates are 90% pure protein by weight. They are the purest and most expensive form of whey protein that exists. That's why they are the first ingredients you read on the Optimum Nutrition 100% Whey Gold label. By using Whey Protein Isolates as our primary protein source, we're able to pack 24 grams of the purest, muscle-building protein per serving, with a lot less of the fat, cholesterol, lactose, and other stuff that you can do without. There's no question this is the standard by which other whey proteins are measured.SUGGESTED USE:Mix about 1 scoop with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily.",
+      "price": "80",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 11,
+      "image": ["NITROTECHGOLD_WHEY.png", "NITROTECHGOLD_WHEYNF.JPG"],
+      "name": "Muscletech Nitro-Tech 100% Whey Gold 5.03 lbs Whey Protein",
+      "description": "Muscletech Nitro-Tech 100% Whey Gold Whey protein is the most common and widely used type of protein. Whey is high in Branched Chain Amino Acids (BCAAs) and Essential Amino Acids (EAAs) and has the highest biological value (the measure of how well your body processes protein).* Using whey protein and supplying your body with the amino acids that it needs on a daily basis is vital in helping to increase muscle protein synthesis for more muscle size and strength.SUGGESTED USE:Mix about 1 scoop with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily.",
+      "price": "65",
+      "type": "whey",
+
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 12,
+      "image": ["RATIONR1_WHEY.png", "RATIONR1_WHEYNF.JPG"],
+      "name": "Redcon1 Ration Whey Protein 65 Servings",
+      "description": "Redcon1 Ration Whey Protein Treat your taste buds and muscles to exactly what they deserve, a forceful serving of whey protein hydrolysate and concentrate ready to saturate your muscles and increase your recovery following intense workouts.Ration is like the Swiss Army Knife of supplements. Its versatility is as impressive as its amino acid profile. Chug it down after your workout or sip it throughout the day as part of a quick and easy protein drink. It is also a great option as a cooking protein due to the heighted taste of a blended protein.By supplementing with Redcon1 Ration Whey Protein, you are putting yourself in the most ideal anabolic state for building new muscle and losing body fat. If you take your training and recovery seriously, consider Ration to be part of your new daily regimen.SUGGESTED USEMix about 1 scoop of Dexter Jackson Legend Whey protein with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily.",
+      "price": "55",
+      "type": "whey",
+
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate", "Vanilla", "Cookies & Cream"]
+    },
+    {
+      "id": 13,
+      "image": ["RONICISOLATE_WHEY.png", "RONICISOLATE_WHEYNF.JPG"],
+      "name": "RONIC ISOLE WHEY PROTEIN ULTIMATE 2270 G",
+      "description": "With 5.5 g of BCAA's and 3 g of glutamine precursors from whey protein in each serving, it will meet the amino acid you need in the purest and economical cost. Ronic Isole Whey protein contributes to the increase and maintenance of muscle mass. Protein also helps maintain normal bones.It is specially formulated with whey protein concentrate, whey protein isolate and whey protein hydrolyzate in peptide form, of which 100% of the protein it contains is obtained by ultra filtration technology. It does not contain added sugar, carbohydrates or fat. It is presented to the palate with its consistency and light taste with strawberry or chocolate flavor options. It does not cause any discomfort in the stomach after useSUGGESTED USEMix about 1 scoop of Dexter Jackson Legend Whey protein with 6 ounce of water/ milk while using a blender or shaker cup and then shake or stir for 10-30 seconds until powder is mixed. If you want thicker shake you add up 4 ounce of water/ milk. Easily making with glass and spoon. And you easily drink 1-3 servings daily.",
+      "price": "65",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 14,
+      "image": ["CORECHAMPS_MASSGAINER.png", "CORECHAMPS_MASSGAINERNF.JPG"],
+      "name": "Core Champs MASS High-Calorie Mass Gainer",
+      "description": "Core Champs MASS High-Calorie Mass Gainer is made with 100% whey protein that delivers a massive 1250 calories when mixed with 18-20 oz. of water. CORE CHAMPS MASS Gainer contains 50-gram high-quality protein, quickly digested carbohydrates, and other minerals. This advanced mass gainer has been designed for any individual who has a tough time adding size, is in their bulking phase, or wants to break through their strength plateaus.CORE CHAMPS MASS Gainer is loaded with huge amounts of Branched Chain Amino Acids (leucine, isoleucine, and valine) in every serving - all of which are critical for muscle building, strength, and recovery from workoutsSUGGESTED USEAs a mass gainer, mix 4 scoops (334g) of Core Champs MASS High-Calorie Mass Gainer with 18-20 oz of water or milk and mix thoroughly in a shaker or blender.For the best results, mix with milk and use a blender. Product sold by weight, not volume.The product does not completely fill the container.Settling occurs during shipping.",
+      "price": "60",
+      "type": "mass gainer",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 15,
+      "image": [
+        "DEXTERJACKSON_MASSGAINER.png",
+        "DEXTERJACKSON_MASSGAINERNF.JPG"
+      ],
+      "name": "Dexter Jackson The Blade Mass 15 lbs Mass Gainer High Calorie Shake",
+      "description": "Dexter Jackson The Blade Mass Gainer is a complex and multi-nutritional formula of Dexter Jackson. It has Malto-dextrose (polysaccharides) and is easily digestible in the body. It also has a Silicon Dioxide (supplement) anti-caking agent and avoids clumps. Creatine monohydrate applies an assortment of consequences for wellbeing and exercise execution, including expanded strength, force, and bulk. This formula calculated double servings/day. It also has a sufficient amount of carbohydrates, proteins, and fats (macronutrients). Also gives an extra amount of calories which is 1256 kcal/serving. Dexter Jackson The Blade Mass helps to boost up your muscles and immunity faster as you can. Easily available on the market and you can make your body more energetic. Whey protein is an extraordinarily solid approach to adding more protein to your eating regimen. It's a quality protein source that is assimilated and used effectively by the human body. This is especially significant for competitors, weight lifters, or individuals who need to acquire bulk and strength while losing fat. It is available in Rich Chocolate flavor. Suggested Use Mix about 4/8 scoops of Dexter Jackson The Blade Mass with 14 ounces of water or milk. While using a blender or shaker cup and then shake or stir for 20-40 seconds until powder is mixed. . If you want a thicker shake, use up to 12 ounces of water or milk, easily made with a glass and spoon.",
+      "price": "65",
+      "type": "mass gainer",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 16,
+      "image": ["MASSTECH_MASSGAINER.png", "MASSTECH_WHEYNF.JPG"],
+      "name": "Muscletech Mass-Tech Extreme 2000 6 lbs Mass Gainer",
+      "description": "Team Muscletech Mass-Tech Extreme 2000 researchers have engineered a brand-new, 5-in-1, hardcore mass gainer designed for individuals looking to put on an extreme amount of mass. MASS-TECH EXTREME 2000 features 80g of protein, over 400g of carbs and 2,000 mass-producing calories, plus 8g of L-leucine (when mixed with 16 oz. of skim milk), 10g of creatine, and 20 vitamins and minerals. The ideal macronutrient profile in MASS-TECH EXTREME 2000 is perfect for bodybuilders and other athletes who are looking to build muscle and increase strength without adding extra fat to their physique. Reap the rewards of all your hard work in the gym - Muscletech Mass-Tech Extreme 2000 has everything you need to bulk up, pack on muscle, smash through strength plateaus and make the kind of mass gains you've never experienced before! Muscletech Mass-Tech Extreme 2000 is a one-of-a-kind product that is packed with essential amino acids and quality proteins which are scientifically developed to ensure muscle and mass gain in a healthy way. This unisex product would greatly benefit those looking for intensive mass and muscle gain by consuming healthy fats and essential proteins. Low in sugars, this is a product that people from various age groups can consume for health benefits.",
+      "price": "40",
+      "type": "whey",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 17,
+      "image": ["BIGJOY_MASSGAINER.webp", "BIGJOY_MASSGAINERNF.JPG"],
+      "name": "Bigjoy Sports BIGMASS Gainer Chocolate 5000g",
+      "description": "BIGJOY® BigMass Gainer is a product in the carbohydrate powder/gainer category. With its carbohydrate and protein content, it helps people who want to increase their body weight and gain weight gain weight. In addition, it helps you to train more intensely in sports that require high effort.BIGJOY® BigMass Gainer offers 50 services in its new packaging, with a total weight of 5000 grams. It is not in single packages, the scale comes out of it. Each scale is 50 grams. 1 serving is 2 scales, that is 100 grams in total.BIGJOY® BigMass Gainer has a rich formula. It offers 74 grams of carbohydrates in each serving. It helps to increase your performance in training with bcaa, taurine and l-glutamine in its formula.SUGGESTED USEYou can mix 1 serving (2 scoops/100g) with 350-500ml water or skimmed milk and consume 2 servings a day before or after training.",
+      "price": "55",
+      "type": "mass gainer",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 18,
+      "image": ["HYDE_PREWORKOUT.png", "HYDE_PREWORKOUTNF.JPG"],
+      "name": "Prosupps Hyde Pre-workout 30 Servings",
+      "description": "For all the Mental Focus, Drive, Endurance, and Stamina you need to crush your training sessions start right here. Developed to be one of the best pre workout experiences available, Prosupps Hyde Pre-workout 30 uses 500mg of N-Acetyl-L-Carnitine, B Vitamins, L-Tyrosine, and Caffeine for incredible focus and energy. With 3,000mg of L-Citrulline for Nitric Oxide production to increase blood flow and 3,200mg of Beta-Alanine to help push past the point of exhaustion, HYDE® Pre Workout will help you reach a new level of stamina. Finally, 1,250mg of Creatine Monohydrate will promote muscular development. HYDE® Pre Workout will have you entering the gym with purpose and leaving knowing you EARNED IT!Directions For Use: As a dietary supplement for adults, take 1 serving in 8-10oz. of water once daily, 30 minutes before activity. Never consume more than 1 serving in a 24-hour period. Do not take within 4 hours of bedtime.",
+      "price": "25",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Blueberry", "Fruit-Punch"]
+    },
+    {
+      "id": 19,
+      "image": ["C4ORIGINAL_PREWORKOUT.png", "C4ORIGINAL_PREWORKOUTNF.JPG"],
+      "name": "Cellucor C4 Original Pre-Workout - 30 Servings C4 Energy Caffeine",
+      "description": "Number 1 Global pre-workout brand*: Our original pre-workout that started it all - C4 Original is built to take your energy, muscular endurance, and pumps to the next level. Ranging from beginners all the way up to the elite competitors, C4 pre-workout products ignite your fitness journey. *Based on IRI market and Euromonitor International data. EXPLOSIVE ENERGY — Take your training to the next level with explosive C4 Energy from 150mg of caffeine.MUSCULAR ENDURANCE — Power tough trainings with CarnoSyn® Beta-Alanine, which helps combat muscular fatigue and support muscular endurance*INCREDIBLE FLAVORS — With billions of servings of C4 branded products sold, the C4 brand has been setting the standard for great flavor for over a decade.*PUMP BOOSTER — Enhance your pumps via a unique patented combination of Creatine and Nitrates.SUGGESTED USE:Directions For Use: As a dietary supplement for adults, take 1 serving in 8-10oz. of water once daily, 30 minutes before activity. Never consume more than 1 serving in a 24-hour period. Do not take within 4 hours of bedtime.",
+      "price": "25",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Watermellon", "Blueberry", "Fruit-Punch"]
+    },
+    {
+      "id": 20,
+      "image": [
+        "DEXTERJACKSON_PREWORKOUT.png",
+        "DEXTERJACKSON_PREWORKOUTNF.JPG"
+      ],
+      "name": "Dexter Jackson Legend Pump Advance Pre-workout L-Citrulline Malate",
+      "description": "Pre-workout supplements provide specific compounds and nutrients that serve to enhance your workout results. These range from stimulants for improved energy levels to other agents that improve blood flow to working muscles, which are also referred to as pump products. Dexter Jackson Legend Pump is a pre-workout pump enhancer designed to increase nitric oxide production. In turn, this may increase blood and oxygen flow to working muscles. The active ingredients include L-citrulline. The amino acid citrulline is gaining popularity as a supplement for health and exercise performance. Legend Pump products are a great addition to almost every pre workout. Essentially a pump product is going to promote blood flow or increase hydration in cells.Acheive Extreme Muscle Pumps,Increase Vascularity,Enhance Blood flow,Improve Cellular Hydration,Support Lean Muscle gains.SUGGESTED USE:Mix 1 scoop of  legend pump with 6-8fl.oz. Of water and shake well at least 10-30 seconds for better result and taste preference. Use as directed by physician or licensed nutritionist. Keep this bottle tightly close in a cool, dry place and away from directed heat, sunlight and moisture.”",
+      "price": "30",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Blueberry Lemon", "Green Apple", "Strawberry Mango"]
+    },
+    {
+      "id": 21,
+      "image": ["BPIHD_WHEY.png", "BPIHD_WHEYNF.JPG"],
+      "name": "Insane Labz Physcotic Red 35 Servings Pre-Workout",
+      "description": "Do you find yourself struggling to stay focused and energized in the gym or during your day? Do you need more than just a little boost of energy? Well look no further than Insane Labz Physcotic Red for your next pre-workout choice. Psychotic is not your average pre-workout mix. There's a reason why Psychotic is dosed at only a half scoop to assess tolerance. It's because of the sheer potency of this pre-workout. You will feel the difference between Psychotic and other, less-potent pre-workouts. In fact, if you're looking for a pre-workout supplement that boosts your energy and provides endurance and recovery like no other, then Psychotic will likely be the only pre-workout you will ever need! Whether you're a gym veteran, a student, or a nine-to-fiver, everyone can benefit from the quick, effective energy and performance benefits of Insane Labz Psychotic!Insane Labz Psychotic uses a formula of Beta Alanine, Creatine Monohydrate, Caffeine, Rauwolfia vomitoria, and huperzine A to produce these incredibly potent effects. Beta Alanine and creatine monohydrate are two absolute staples of pre-workouts that are almost always necessary in a powerful pre-workout such as Psychotic. These ingredients provide maximum performance and endurance benefits and push your strength output to new levels. Caffeine is a stimulant that provides high levels of energy, and when combined with the rest of Psychotic's formula, provides a balance of energy and performance results. So if you're ready for a next-level pre-workout supplement, then you'll want to check out Insane Labz Psychotic!SUGGESTED USE:As a dietary supplement for adults, take 1 serving in 8-10oz. of water once daily, 30 minutes before activity. Never consume more than 1 serving in a 24-hour period. Do not take within 4 hours of bedtime.",
+      "price": "25",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Chocolate"]
+    },
+    {
+      "id": 22,
+      "image": ["LCITRULINE_R1.png", "LCITRULINE_R1NF.JPG"],
+      "name": "Redcon1 Basic Training L-Citrulline 3Gram 60 Servings",
+      "description": "Redcon1 Basic Training L-Citrulline 60  is the natural form of amino acid citrulline. Citrulline supports vasodilation through NO (nitric oxide) production, helping to improve blood flow and muscle pumps during a workout. L-citrulline is the natural form of amino acid citrulline. Citrulline helps boost nitric oxide levels to help increase blood flow and deliver nutrients to your muscles, creating the ‘pump` effect. L-Citrulline act as a vasodilator a substance that widens the veins and arteries to help improve blood flow which helps in enhancing physical exercise, Improving athletic performance. It makes to focus on intense workouts.Suggested Use:As a dietary supplement, add 1 Redcon1 Basic Training L-Citrulline 60  scoop to 8-10 ounces of water, your favorite beverage or pre-workout product.",
+      "price": "25",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 23,
+      "image": ["CORECHAMPS_PREWORKOUT.png", "CORECHAMPS_PREWORKOUTNF.JPG"],
+      "name": "Core Champs RDX Pre-workout 30 Servings",
+      "description": "Core Champs RDX Pre-workout has been formulated with the world`s most powerful ingredients in their full clinical doses in order to master the major critical power output systems in your body.RDX the strongest pre-workout provides a long-lasting energy , skin splitting muscle pumps, improved focus, and more strength to carry out high-intensity workouts. It`s fueled by 8.9 gram of CORE RDX Blend (proprietary) which make it more advanced pre-workout to deliver a punch of power when you need it most.SUGGESTED USE:due to extreme potency, as a dietary supplement, take 1 scoop core champs rdx pre-workout 30 minutes before workout in 8-10 oz of cold water. Do not exceed more than one (1) serving in a day. ",
+      "price": "25",
+      "type": "pre workout",
+      "inventoryStatus": "instock",
+      "flavors": ["Mango", "Fruit-Punch"]
+    },
+    {
+      "id": 24,
+      "image": ["BASICTRAINING_CLA.png", "BASICTRAINING_CLANF.JPG"],
+      "name": "Redcon1 Basic Training CLA 1Gram 90 Servings",
+      "description": "Redcon1 Basic Training CLA 90 hardwires us to maintain lean body composition, helping to reduce the urge to eat unhealthy fats and burn the calories that already exist, instead of craving additional empty calories. Conjugated Linoleic Acid (CLA) is a naturally occurring, omega-6 fatty acid found in plant oils and foods like eggs, dairy products, and red meat, but only in small levels. CLA is considered a healthy trans fat. To receive the amounts of CLA needed to achieve favorable changes in body composition through foods alone, you`d need to consume far too much dietary fat. Fortunately, the benefits of CLA can be achieved through supplementation. A number of studies have demonstrated that when combined with an exercise regimen, CLA can help improve lean muscle mass, increase fat loss, and support a healthy metabolism. Ingredient Info: CLA, or Conjugated Linoleic Acid, is a naturally occurring fatty acid found in dairy and meat products. CLA may help people lose fat over time by helping the body burn fat for energy. Ways to Customize your Supplementation: Recommended to take 2 servings on training and non-training days on an empty stomach spaced evenly throughout the day. Should be taken 30 mins before meals.SUGGESTED USE:As a dietary supplement, take 1 redcon1 basic training cla 90 softgel upon waking on an empty stomach and 1 softgel 30 min prior to a meal. For best results space servings evenly throughout the day.",
+      "price": "18",
+      "type": "fat burner",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 25,
+      "image": [
+        "DEXTERJACKSON_LCARNITINE.png",
+        "DEXTERJACKSON_LCARNITINENF.JPG"
+      ],
+      "name": "Dexter Jackson L-Carnitine 3200mg - Help to Loss Weight",
+      "description": "L-Carnitine supplement helps the body break down fatty acids and turn them into energy to power the cells. L-Carnitine also has a secondary function of helping remove some waste products from the cells to prevent them from accumulating and causing problems. L-Carnitine availability seems to limit muscle metabolism during very high intensity exercise. Athletes take extra L-carnitine, for boost their athletic performance.Dexter Jackson L-Carnitine 3200mg supplements increases the amount of fat burned, particularly during exercise. This enhances fat loss and also boosts muscle endurance by sparing muscle glycogen. Carnitine has also been found to improve blood flow by increasing nitric oxide production.L-CARNITINE BURNS FAT With higher levels of L-carnitine, your body becomes more efficient at burning fat. Not only does this decrease the amount of fat that your body stores, but it also helps reduce visceral belly fat. MORE ENERGY DURING AND AFTER A WORKOUTAs your body`s capacity for fat-burning rises, so does your energy level. L-carnitine not only helps you increase the amount of fat burned with every workout, but you also get more energy for better workouts and an active lifestyle.L-CARNITINE BOOSTS YOUR METABOLISM TO HELP YOU LOSE WEIGHTTaking that energy increase into your exercise routine will allow you to perform with more intensity, providing a boost to your metabolism. A more efficient metabolism significantly aids your weight loss program because you`ll increase the amount of calories you`re able to burn—even at rest.SUGGESTED USE:Take one tablespoon daily of Dexter Jackson L-Carnitine 3200mg with water or juice to facilitate absorption. Use as directed by physician or licensed nutritionist. Use in conjunction with a proper exercise and nutrition regimen",
+      "price": "20",
+      "type": ["fat burner", "pre workout"],
+      "inventoryStatus": "instock",
+      "flavors": ["Blue Rassberry"]
+    },
+    {
+      "id": 27,
+      "image": ["MUSCLETECH_HYDROXYCUT.png", "MUSCLETECH_HYDROXYCUTNF.JPG"],
+      "name": "Muscletech Hydroxycut Hardcore ELITE",
+      "description": "Muscletech Hydroxycut Hardcore ELITE formula was rebuilt from the ground up with one purpose in mind: to provide you with an unrivalled thermogenic experience. With caffeine, green coffee, L-theanine and capsicum, this powerful formula delivers a one-of-a-kind sensory experience, and jacks up energy levels!For more than two decades, MuscleTech® has pushed science and human potential to its limits — and Hydroxycut Hardcore® Elite expands on this tradition with the most advanced thermogenic solution available.POWERFUL WEIGHT LOSSFormulated with the key weight loss ingredient green coffee extract, which has been shown to be effective in two studies.SUPER-THERMOGENESIS & EXTREME ENERGYMuscletech Hydroxycut Hardcore ELITE also contains a powerful super-thermogenic ingredient (caffeine anhydrous) that`s been shown to deliver a serious boost of extreme energy after just one dose!200MG GREEN COFFEE EXTRACT Green Coffee Extract is a key weight loss ingredient that has been shown to be effective in two clinical studies. 100MG L-THEANINE A scientifically studied dose of L-theanine was added to help support enhanced focus.100MG L-CARNITINE L-TARTRATE Formulated with L-carnitine L-tartrate to aid in post-workout recovery through the improvement of muscle tissue repair and muscle tissue damage.Suggested Use To assess your tolerance, take 1 capsule, 2x daily for days 1-3. Once tolerance is assessed, take 2 capsules, 2x daily for day 4 and beyond.",
+      "price": "25",
+      "type": "fat burner",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 28,
+      "image": ["NUTREX_LIPO6C.png", "NUTREX_LIPO6CNF.JPG"],
+      "name": "Nutrex Research LIPO6 Black Ultra Concentrate 60 Liquid Capsules",
+      "description": "Nutrex Research LIPO6 Black is a very strong fat burner. It`s so strong that you can never take more than one pill per serving. This is an ultra-concentrated super potent fat loss aid that is designed to fully assist your body in burning off fat.LIPO-6 BLACK UC helps fire up your metabolism to stimulate calorie burning. It supports appetite control to help prevent food cravings and over-eating. It also promotes energy and alertness, so you can keep your activity level high while dieting.LIPO-6 BLACK ULTRA CONCENTRATE contains clinically tested Advantra Z® along with Yohimbine, Rauwolscine, Theobromine and Caffeine. This quintet of ingredients helps promote a strong thermogenic effect.Thermogenesis creates heat, which prompts your body to burn fat. You may feel warmer and sweat more. By taking one pill twice a day, you can stoke your internal furnace and consistently support fat-burning.To help ensure rapid effects, Nutrex Research LIPO6 Black comes in fast-absorbing liquid capsules. Its` active ingredients are already pre-dissolved, so you can get better results - FASTER!Just add one capsule twice per day to your diet and training regimen, be consistent and see the difference. LIPO-6 BLACK UC is one of the most potent thermogenic fat-burners.",
+      "price": "25",
+      "type": "fat burner",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 29,
+      "image": ["NUTREX_LIPO6H.png", "NUTREX_LIPO6HNF.JPG"],
+      "name": "Nutrex Research Lipo-6 Hardcore Maximum Fat Burner",
+      "description": "Nutrex Research Lipo-6 Hardcore is for those who want maximum fat loss results! If you`re looking for an exceptionally strong fat burner, this is the product.Do you want a lean physique, shredded six pack abs or just burn belly fat? With LIPO-6 HARDCORE you check all the boxes.LIPO-6 HARDCORE helps maximize fat burning. It gives you high stimulant energy. It creates an intense thermogenic effect to help fire up your metabolism. Plus, its` ingredient combination helps reduce your appetite and food cravings.All in just one pill per serving.SUGGESTED USE:Take 1 capsule Nutrex Research Lipo-6 Hardcore in the morning and 1 capsule in the afternoon. For best results use daily for a minimum of 30 days. Do not exceed the recommended dosage.",
+      "price": "25",
+      "type": "fat burner",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 30,
+      "image": ["CORECHAMPS_EAA.png", "CORECHAMPS_EAANF.JPG"],
+      "name": "Core Champs EAA 30 Servings - Essential Amino Acids For Muscle Recovery",
+      "description": "Core Champs EAA Essential Amino Acids packed with all 9 Essential Amino Acids (EAAs) which is critical for muscle protein synthesis, muscle growth, muscle preservation, enhanced endurance and recoveryCore Champs EAA Essential Amino Acids is formulated with a potent 9.7 grams supply of all nine Essential Amino Acids - L-Threonine, L-Lysine HCL, L-Methonine, L-Phenylalanine, L-Tryptophan, L-Histidine and of course the three Branched Chain Amino Acids ( L-Isoleucine, L-Leucine and L-Valine)Taking an EAA Supplement before, during or after your workout can produce an increase in Protein Synthesis that may create a positive protein balance and result in a muscle building (anabolic) state that allows you to recover and build muscle more easily.    Essential Amino Acid Supplements are made of specific Amino Acids that are considered Essential.  Of the 20 Amino Acids, 9 are considered Essential with Leucine, Valine and Isoleucine - the BCAAs - being amongst the most well-known EAAs.The body cannot produce EAA on its own and need to be taken in from food/supplementation. Amino acids are the building blocks of protein, they are crucial in the synthesis of muscle growth and prevention of muscle catabolismSUGGESTED USEMix 1 scoop of CORE CHAMPS EAA with 8-10 oz of cold water. CORE CHAMPS EAA can be take prior to workout, during workout and post workout for maximum efficacy. May also be used on non-training days.",
+      "price": "25",
+      "type": "amino acids",
+      "inventoryStatus": "instock",
+      "flavors": ["Blueberry", "Lemon"]
+    },
+    {
+      "id": 31,
+      "image": ["XTEND_BCAA.png", "XTEND_BCAANF.JPG"],
+      "name": "Scivation Xtend Original 7g BCAA 30 Servings",
+      "description": "Scivation Xtend Original 7g Faster recovery is key to better results. For over 10 years, XTEND® has been making the best recovery products in the world. Powered by 7 grams of branched-chain amino acids (BCAAs), which have been clinically shown to support muscle recovery and growth, XTEND® Original also contains hydrating electrolytes and additional performance ingredients to help you refuel, repair, and recover. Try all the sugar-free, mouthwatering flavors of Scivation Xtend Original 7g  to support your fitness goals. XTEND Original is the BCAA that started it all. With it's huge selection of mouth-watering flavors, XTEND Original was designed to help you hydrate, repair, and recover.",
+      "price": "25",
+      "type": "amino acids",
+      "inventoryStatus": "instock",
+      "flavors": ["Mango", "Apple", "Fruit-Punch"]
+    },
+    {
+      "id": 32,
+      "image": [
+        "CORECHAMPS_MULTIVITAMINS.png",
+        "CORECHAMPS_MULTIVITAMINSNF.JPG"
+      ],
+      "name": "Core Champs Multivitamin 120 Tablets",
+      "description": "Core Champs Multivitamin 120 Is a revolutionary and high potency research-fueled formulation that delivers fast results backed by numerous clinical research studies. Each serving, you get a vast arsenal of key ingredients including a digestive enzyme complex to help enhance absorb nutrients that are delivered in the right amounts. CORE CHAMPS Multivitamin is formulated for use in healthy adults and as part of a healthy, balanced diet, and exercise program.Every ingredient was handpicked with the purpose to deliver results to help your body look and perform its best. This advance formulated multivitamin contains various vitamins and minerals which support muscle health, immunity and improve metabolism.SUGGESTED USE:As a dietary supplement, take 1 tablet daily or as directed by a healthcare professional. Keep this bottle tightly closed in a cool, dry place away from direct heat, sunlight, and moisture.",
+      "price": "18",
+      "type": "vitamins",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 33,
+      "image": ["CORECHAMPS_OMEGA3.png", "CORECHAMPS_OMEGA3NF.JPG"],
+      "name": "Core Champs Omega-3 Fish Oil 120 Softgels",
+      "description": "CORE CHAMPS Omega-3 Fish oil delivers 1000mg of Omega-3 fatty acids. Fish oil is derived from the tissues of fish. Fish oils contain the Omega-3 fatty acids Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA). Omega-3 fatty acids play important roles in heart, brain, and skin health. It helps to reduce inflammation and offers performance-enhancing benefits for athletes.SUGGESTED USE:Take 2 softgels daily with food. Supportive but not conclusive research shows that consumption of EPA and DHA Omega-3 fatty acids may reduce the risk of coronary heart disease.",
+      "price": "13",
+      "type": "vitamins",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 34,
+      "image": ["REDCON1_GLUTAMINE.png", "REDCON1_GLUTAMINENF.JPG"],
+      "name": "Redcon1 Basic Training Glutamine 5Gram 60 Servings",
+      "description": "Redcon1 Basic Training Glutamine 60 Glutamine is the most common amino acid found in muscle tissue. It is involved in protein synthesis and plays a pivotal role in the body`s nitrogen balance, provides fuel for the immune system and helps maintain proper intestinal function. While the body produces glutamine, there are times when the body may need more glutamine than it can produce. Intense exercise is one of these scenarios, as it can rapidly deplete glutamine stores, directly affecting the immune system and muscle synthesis. Supplementing with Glutamine may help maintain these critical glutamine levels and support some of your body`s most basic functions, especially when training and putting exercise-induced stress on the body. Ingredient Info: Glutamine is the most abundant amino acid in the body, and much of it is stored in muscle tissue. Glutamine transports nitrogen into your muscle cells and plays a significant role in muscle protein synthesis and in preventing muscle breakdown. Glutamine also provides support to the immune system. Ways to Customize your Supplementation: Add a scoop to your Grunt or Breach and sip on non-training days to help prevent muscle breakdown. Add to your post workout shake on heavy or high endurance training days to enhance recovery and muscle protein synthesis. Stack with Basic Training Vitamin C for robust immune support.SUGGESTED USE:As a dietary supplement, mix one scoop redcon1 basic training glutamine 60 (5g) with 8-10 fl. Oz of water or your favorite beverage. For best results, take pre and post-workout.",
+      "price": "15",
+      "type": "glutamine",
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 35,
+      "image": ["ALPHA_TEST.png", "ALPHA_TESTNF.JPG"],
+      "name": "Muscletech AlphaTest ATP & Testosterone Booster",
+      "description": "Muscletech AlphaTest & Testosterone Booster is scientifically engineered to deliver a powerful testosterone-boosting ingredient matrix to stimulate free testosterone, maintain a peak testosterone-to-estradiol ratio and enhance ATP levels! Muscletech AlphaTest® ATP & Testosterone Booster can be used by active men, fitness enthusiasts and high-performance athletes, powerlifters, crossfitters, bodybuilders, endurance athletes, and men looking to support their testosterone levels within the normal healthy range.One of the most exciting key ingredients in Muscletech AlphaTest® ATP & Testosterone Booster is PrimaVie®, a patented clinical-strength form of shilajit. Shilajit in its natural state has no chemical definition. In order to yield a consistent and efficacious form of shilajit, it is obtained from carefully selected rocks and is put through a patented technology to purify and standardize it. This form of shilajit is now assured of optimal levels of bioactive components such as fulvic acid and dibenzo-pyrones. This rare organo-mineral compound has been shown in clinical research to significantly increase total serum testosterone levels in 90 days. In another study, shilajit was shown to boost ATP levels in just 15 days! ATP is a critical energy source used during workouts.Suggested Use Take 2 capsules with a glass of water twice daily. Do not exceed 4 capsules in a 24-hour period. Read the entire label before use and follow directions provided. ",
+      "price": "28",
+      "type": ["vitamins", "testo booster"],
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
+    },
+    {
+      "id": 36,
+      "image": ["NOWFOOD_ASHWAGANDHA.png", "NOWFOOD_ASHWAGANDHANF.JPG"],
+      "name": "Now Food Ashwagandha 450 mg 90 Veg Capsules",
+      "description": "Ashwagandha (Withania somnifera) is an herb that is extensively used in Ayurveda, the traditional herbal system in India. Ashwagandha is used as a general tonic and 'adaptogen', helping the body adapt to temporary, normal stress.* In addition, preliminary data suggest that ashwagandha supports a healthy immune system.*",
+      "price": "35",
+      "type": ["vitamins", "testo booster"],
+      "inventoryStatus": "instock",
+      "flavors": ["Unflavored"]
     }
   ],
   "brandIcons": [
     {
       "id": 1,
-      "image": "brand1.png"
+      "image": "C4LOGO.jpg"
     },
     {
       "id": 2,
-      "image": "brand2.png"
+      "image": "CORECHAMPSLOGO.jpg"
     },
     {
       "id": 3,
-      "image": "brand3.png"
+      "image": "DEXTERJACKSONLOGO.jpg"
     },
     {
       "id": 4,
-      "image": "brand4.png"
+      "image": "KEVINLEVRONLOGO.JPG"
     },
     {
       "id": 5,
-      "image": "brand5.png"
+      "image": "MUSCLETECHLOGO.jpg"
+    },
+    {
+      "id": 6,
+      "image": "NOWFOODLOGO.JPG"
+    },
+    {
+      "id": 7,
+      "image": "NUTREXLOGO.JPG"
+    },
+    {
+      "id": 8,
+      "image": "PROSCIENCELOGO.JPG"
+    },
+    {
+      "id": 9,
+      "image": "PROSUPPSLOGO.JPG"
+    },
+    {
+      "id": 10,
+      "image": "REDCON1LOGO.jpg"
+    },
+    {
+      "id": 11,
+      "image": "RONICLOGO.JPG"
     }
   ]
 }

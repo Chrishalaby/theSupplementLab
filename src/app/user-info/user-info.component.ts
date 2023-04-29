@@ -32,7 +32,6 @@ import { CartService } from '../products/shared/service/cart.service';
 })
 export class UserInfoComponent {
   infoForm!: FormGroup;
-
   // countryList = [{ name: 'Lebanon', code: 'LB' }];
   constructor(
     private formBuilder: FormBuilder,
