@@ -1,7 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
 import { DialogService } from 'primeng/dynamicdialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 export interface Contact {
   placeholder: string;
@@ -13,15 +20,21 @@ export interface Contact {
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  standalone: true,
+  imports: [InputTextareaModule, ReactiveFormsModule, DialogModule],
+  providers: [DialogService],
 })
 export class ContactComponent {
-
   contact!: Contact;
   contactForm!: FormGroup;
   display: boolean = false;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder, public dialogService: DialogService) { }
+  constructor(
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
+    public dialogService: DialogService
+  ) {}
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
@@ -29,7 +42,7 @@ export class ContactComponent {
       name: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
     });
   }
 
@@ -39,5 +52,4 @@ export class ContactComponent {
     this.http.post(url, this.contactForm.value);
     this.display = true;
   }
-
 }
