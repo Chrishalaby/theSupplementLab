@@ -1,28 +1,65 @@
-<section class="flex align-content-center justify-content-center flex-wrap flex-column md:h-30rem my-3">
-  <form [formGroup]="contactForm" class="flex justify-content-center flex-column">
+<section
+  class="flex align-content-center justify-content-center flex-wrap flex-column md:h-30rem my-3"
+>
+  <form
+    [formGroup]="contactForm"
+    class="flex justify-content-center flex-column"
+  >
     <div>
       <h1>Contact Us</h1>
       <div class="flex sm:flex-row flex-column gap-1 mt-5">
         <span class="p-float-label">
-          <input id="float-input" type="text" [required]="true" pInputText formControlName="name">
+          <input
+            id="float-input"
+            type="text"
+            [required]="true"
+            pInputText
+            formControlName="name"
+          />
           <label for="float-input">Name</label>
         </span>
-        <span class="p-float-label sm:mt-0  mt-5">
-          <input id="float-input" type="text" [required]="true" pInputText formControlName="phoneNumber">
+        <span class="p-float-label sm:mt-0 mt-5">
+          <input
+            id="float-input"
+            type="text"
+            [required]="true"
+            pInputText
+            formControlName="phoneNumber"
+          />
           <label for="float-input">Phone Number</label>
         </span>
       </div>
       <span class="p-float-label mt-5">
-        <input id="float-input" type="text" [required]="true" pInputText class="w-full" formControlName="email">
+        <input
+          id="float-input"
+          type="text"
+          [required]="true"
+          pInputText
+          class="w-full"
+          formControlName="email"
+        />
         <label for="float-input">Email</label>
       </span>
       <div class="field mt-5">
-          <label>Message</label>
-          <textarea inputId="textarea" rows="5" [required]="true" style="resize: none;" class="w-full"  pInputTextarea formControlName="message"></textarea>
+        <label>Message</label>
+        <textarea
+          inputId="textarea"
+          rows="5"
+          [required]="true"
+          style="resize: none"
+          class="w-full"
+          pInputTextarea
+          formControlName="message"
+        ></textarea>
       </div>
     </div>
 
-    <button pButton pRipple class="mt-2" type="button" (click)="submitForm()" label="Send"></button>
+    <p-button
+      class="mt-2"
+      type="button"
+      (click)="submitForm()"
+      label="Send"
+    ></p-button>
   </form>
 </section>
 
