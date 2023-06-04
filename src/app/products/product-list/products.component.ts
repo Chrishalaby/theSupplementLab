@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DataView, DataViewModule } from 'primeng/dataview';
@@ -8,7 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DialogService } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
-import { debounceTime, tap } from 'rxjs';
+import { debounceTime } from 'rxjs';
 import { ProxyService } from 'src/app/proxy.service';
 import { CartProductsComponent } from '../cart-products/cart-products.component';
 import { ProductOverviewComponent } from '../product-overview/product-overview.component';
@@ -26,48 +27,24 @@ import { Product } from '../shared/model/cart.model';
     ReactiveFormsModule,
     ToastModule,
     InputTextModule,
+    CommonModule,
   ],
   providers: [DialogService, MessageService],
 })
 export class ProductsComponent {
-  products: Product[] = [];
+  products: any[] = [];
 
-  sortOrder!: number;
-  sortField!: string;
-  sortOptions: any[] = [
-    {
-      label: 'whey',
-    },
-    {
-      label: 'CREATINE',
-    },
-    {
-      label: 'PRE WORKOUT',
-    },
-    {
-      label: 'MASS GAINER',
-    },
-    {
-      label: 'FAT BURNER',
-    },
-    {
-      label: 'VITAMINS',
-    },
-  ];
+  productTypes: any[] = [];
 
-  formGroup: FormGroup = this.formBuilder.group({
-    search: '',
-    sort: '',
-  });
+  search: FormControl = new FormControl('');
 
   @ViewChild('dv') dataView!: DataView;
 
-  prod: any;
   prodParamitem = {
     NAME: '',
     DESCRIPTION: '',
-    PRODUCT_TYPE_ID_LIST: [],
-    INVENTORY_STATUS_ID_LIST: [],
+    PRODUCT_TYPE_ID_LIST: [] as number[],
+    INVENTORY_STATUS_ID_LIST: [] as number[],
   };
   constructor(
     private readonly httpClient: HttpClient,
@@ -78,60 +55,38 @@ export class ProductsComponent {
   ) {}
 
   ngOnInit(): void {
-    this.httpClient
-      .get<any>('assets/products.json')
-      .pipe(
-        tap((products: any) => {
-          this.products = products.data;
-        })
-      )
-      .subscribe();
+    this.getProducts();
 
-    this.formGroup
-      .get('search')
-      ?.valueChanges.pipe(debounceTime(300))
-      .subscribe((e) => {
-        this.dataView.filter(e);
+    this.proxyService
+      .Get_Product_type_By_OWNER_ID({ OWNER_ID: 1 })
+      .subscribe((data) => {
+        this.productTypes = data;
       });
+
+    this.search.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
+      this.prodParamitem.NAME = value;
+      this.getProducts();
+    });
+  }
+
+  onSortChange(event: any) {
+    this.prodParamitem.PRODUCT_TYPE_ID_LIST[0] = event.value
+      .PRODUCT_TYPE_ID as number;
+
+    this.getProducts();
+  }
+
+  getProducts() {
     this.proxyService
       .Get_Product_By_Where_InList_Adv(this.prodParamitem)
       .subscribe((data) => {
-        this.prod = data;
+        this.products = data.My_Result;
         console.log(data);
       });
   }
 
-  sortedCategory: string = '';
-  isNull = false;
-  onSortChange(event: any) {
-    if (event.value) {
-      this.sortedCategory = event.value.label;
-      this.isNull = true;
-    }
-    this.httpClient.get<any>('assets/products.json').subscribe((products) => {
-      if (this.isNull == true) {
-        this.products = products.data.filter((product: Product) => {
-          if (Array.isArray(product.type)) {
-            return product.type.some(
-              (type) => type.toLowerCase() === this.sortedCategory.toLowerCase()
-            );
-          } else {
-            return (
-              product.type.toLowerCase() === this.sortedCategory.toLowerCase()
-            );
-          }
-        });
-
-        this.isNull = false;
-      } else {
-        this.products = products.data;
-      }
-    });
-  }
-
   showCart() {
     this.dialogService.open(CartProductsComponent, {
-      // data: this.productsCart,
       header: 'Your Cart',
       width: '70%',
     });

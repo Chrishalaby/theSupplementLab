@@ -1,7 +1,7 @@
 <section class="grid">
   <div class="md:col-6 col-12">
     <p-galleria
-      [value]="productOverview.image"
+      [value]="productOverview.My_Uploaded_files"
       [responsiveOptions]="responsiveOptions"
       [containerStyle]="{ 'max-width': '640px' }"
       [showThumbnailNavigators]="false"
@@ -10,9 +10,9 @@
     >
       <ng-template pTemplate="item" let-item>
         <img
-          [src]="'assets/images/protein/' + productOverview.type + '/' + item"
+          [src]="item.My_URL"
           style="width: 70%"
-          [alt]="productOverview.name"
+          [alt]="productOverview.NAME"
         />
       </ng-template>
     </p-galleria>
@@ -20,14 +20,13 @@
   <div class="md:col-6 col-12">
     <div class="flex gap-2 flex-column">
       <h1 class="text-5xl">
-        {{ productOverview.name }}
+        {{ productOverview.NAME }}
       </h1>
-      <p class="text-4xl font-bold">${{ productOverview.price }}</p>
+      <p class="text-4xl font-bold">${{ productOverview.PRICE }}</p>
       <div class="md:mt-6 mt-2 flex flex-column gap-2">
         <p>Flavor</p>
         <p-dropdown
-          [options]="productOverview.flavors"
-          placeholder="{{ productOverview.flavor }}"
+          [options]="allFlavors"
           (onChange)="onFlavorChange($event)"
         ></p-dropdown>
       </div>
@@ -54,21 +53,23 @@
           <span
             [class]="
               'product-badge status-' +
-              productOverview.inventoryStatus.toLowerCase()
+              productOverview.My_Inventory_status.VALUE
             "
-            >{{ productOverview.inventoryStatus }}</span
+            >{{ productOverview.My_Inventory_status.VALUE }}</span
           >
           <p-button
             icon="pi pi-shopping-cart"
             label="Add To Cart"
             (onClick)="addToCart()"
-            [disabled]="productOverview.inventoryStatus === 'outofstock'"
+            [disabled]="
+              productOverview.My_Inventory_status.VALUE === 'outofstock'
+            "
           ></p-button>
         </div>
       </div>
       <p-card header="Description" class="md:mt-6 mt-3">
         <p class="m-0">
-          {{ productOverview.description }}
+          {{ productOverview.DESCRIPTION }}
         </p>
       </p-card>
     </div>

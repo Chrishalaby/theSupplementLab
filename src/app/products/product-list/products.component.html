@@ -6,18 +6,14 @@
     [paginator]="true"
     [rows]="9"
     filterBy="name"
-    [sortField]="sortField"
-    [sortOrder]="sortOrder"
     layout="grid"
   >
     <ng-template pTemplate="header">
-      <div
-        class="flex flex-column md:flex-row md:justify-content-between"
-        [formGroup]="formGroup"
-      >
+      <div class="flex flex-column md:flex-row md:justify-content-between">
         <p-dropdown
-          [options]="sortOptions"
+          [options]="productTypes"
           placeholder="Category"
+          optionLabel="TYPE"
           (onChange)="onSortChange($event)"
           styleClass="mb-2 md:mb-0"
           [showClear]="true"
@@ -29,7 +25,7 @@
             type="search"
             pInputText
             placeholder="Search by Name"
-            formControlName="search"
+            [formControl]="search"
           />
         </span>
         <div class="flex flex-row justify-content-between">
@@ -51,36 +47,29 @@
         >
           <div class="product-list-item">
             <img
-              [src]="
-                'assets/images/protein/' + product.type + '/' + product.image[0]
-              "
-              [alt]="product.name"
+              *ngIf="product.My_Uploaded_files.length > 0"
+              [src]="product.My_Uploaded_files[0].My_URL"
+              [alt]="product.NAME"
             />
             <div class="product-list-detail">
-              <div class="product-name uppercase">{{ product.name }}</div>
-              <!-- <div class="product-description">{{ product.description }}</div> -->
+              <div class="product-name uppercase">{{ product.NAME }}</div>
               <div class="flex flex-row gap-2">
                 <span class="product-category uppercase"
-                  >{{ product.type }}
+                  >{{ product.My_Product_type.TYPE }}
                 </span>
                 <i class="pi pi-tag product-category-icon"></i>
               </div>
-              <span class="product-category">{{ product.category }}</span>
+              <!-- <span class="product-category">{{
+                product.My_Product_type.TYPE
+              }}</span> -->
             </div>
             <div class="product-list-action">
-              <span class="product-price">${{ product.price }}</span>
-              <!-- <p-button
-              icon="pi pi-shopping-cart"
-              (click)="addToCart(product)"
-              label="Add to Cart"
-              [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-            ></p-button> -->
+              <span class="product-price">${{ product.PRICE }}</span>
               <span
                 [class]="
-                  'product-badge status-' +
-                  product.inventoryStatus.toLowerCase()
+                  'product-badge status-' + product.My_Inventory_status.VALUE
                 "
-                >{{ product.inventoryStatus }}</span
+                >{{ product.My_Inventory_status.VALUE }}</span
               >
             </div>
           </div>
@@ -97,38 +86,27 @@
             <div class="product-grid-item-top">
               <div class="flex flex-row gap-2">
                 <span class="product-category uppercase"
-                  >{{ product.type }}
+                  >{{ product.My_Product_type.TYPE }}
                 </span>
                 <i class="pi pi-tag product-category-icon"></i>
               </div>
               <span
                 [class]="
-                  'product-badge status-' +
-                  product.inventoryStatus.toLowerCase()
+                  'product-badge status-' + product.My_Inventory_status.VALUE
                 "
-                >{{ product.inventoryStatus }}</span
+                >{{ product.My_Inventory_status.VALUE }}</span
               >
             </div>
             <div class="product-grid-item-content">
               <img
-                [src]="
-                  'assets/images/protein/' +
-                  product.type +
-                  '/' +
-                  product.image[0]
-                "
-                [alt]="product.name"
+                *ngIf="product.My_Uploaded_files.length > 0"
+                [src]="product.My_Uploaded_files[0].My_URL"
+                [alt]="product.NAME"
               />
-              <div class="product-name uppercase">{{ product.name }}</div>
-              <!-- <div class="product-description">{{ product.description }}</div> -->
+              <div class="product-name uppercase">{{ product.NAME }}</div>
             </div>
             <div class="product-grid-item-bottom">
-              <span class="product-price">${{ product.price }}</span>
-              <!-- <p-button
-                icon="pi pi-shopping-cart"
-                (click)="addToCart(product)"
-                [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-              ></p-button> -->
+              <span class="product-price">${{ product.PRICE }}</span>
             </div>
           </div>
         </a>

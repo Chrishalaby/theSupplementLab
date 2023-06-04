@@ -18,7 +18,7 @@
   <ng-template let-product pTemplate="listItem">
     <div class="col-12">
       <div class="product-list-item">
-        <img [src]="'assets/images/' + product.image[0]" [alt]="product.name" />
+        <img [src]="product.image" [alt]="product.name" />
         <div class="product-list-detail">
           <div class="product-name">{{ product.name }}</div>
         </div>

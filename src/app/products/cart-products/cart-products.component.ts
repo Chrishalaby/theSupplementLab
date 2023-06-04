@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { DataViewModule } from 'primeng/dataview';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { Product } from '../shared/model/cart.model';
 import { CartService } from '../shared/service/cart.service';
 
 @Component({
@@ -14,7 +13,7 @@ import { CartService } from '../shared/service/cart.service';
   imports: [ButtonModule, DataViewModule],
 })
 export class CartProductsComponent {
-  productsCart: Product[] = [];
+  productsCart: any[] = [];
 
   constructor(
     public ref: DynamicDialogRef,
@@ -26,7 +25,7 @@ export class CartProductsComponent {
     this.productsCart = this.cartService.getCartItems();
   }
 
-  removeFromCart(product: Product) {
+  removeFromCart(product: any) {
     this.cartService.removeItem(product);
     this.productsCart = this.cartService.getCartItems();
   }

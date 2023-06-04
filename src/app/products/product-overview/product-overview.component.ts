@@ -5,6 +5,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { GalleriaModule } from 'primeng/galleria';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { Product } from '../shared/model/cart.model';
 import { CartService } from '../shared/service/cart.service';
 
 @Component({
@@ -28,9 +29,11 @@ export class ProductOverviewComponent {
   ) {}
 
   productOverview = this.dynamicDialogConfig.data;
-  chosenFlavor = this.productOverview.flavors[0];
+  chosenFlavor = this.productOverview.My_Product_flavor[0]?.My_Flavor?.VALUE;
   chosenQuantity = 1;
-
+  allFlavors = this.productOverview.My_Product_flavor.map(
+    (flavor: { My_Flavor: { VALUE: any } }) => flavor.My_Flavor?.VALUE
+  );
   onFlavorChange(event: any) {
     this.chosenFlavor = event.value;
   }
@@ -51,11 +54,17 @@ export class ProductOverviewComponent {
     },
   ];
 
-  addToCart() {
-    this.productOverview.chosenFlavor = this.chosenFlavor;
-    this.productOverview.quantity = this.chosenQuantity;
-    this.cartService.addToCart(this.productOverview);
+  productSentToCart: Product = {} as Product;
 
+  addToCart() {
+    this.productSentToCart.chosenFlavor = this.chosenFlavor;
+    this.productSentToCart.quantity = this.chosenQuantity;
+    this.productSentToCart.image =
+      this.productOverview.My_Uploaded_files[0]?.My_URL;
+    this.productSentToCart.name = this.productOverview.NAME;
+    this.productSentToCart.price = this.productOverview.PRICE;
+
+    this.cartService.addToCart(this.productSentToCart);
     this.ref.close(true);
   }
 }
