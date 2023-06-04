@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './admin/login/login.component';
+import { AuthGuardService } from './admin/login/service/auth-guard.service';
 import { OfferUploadComponent } from './admin/offer-upload/offer-upload.component';
 import { ProductUploadComponent } from './admin/product-upload/product-upload.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -11,12 +13,18 @@ import { UserInfoComponent } from './user-info/user-info.component';
 
 const routes: Routes = [
   {
+    path: 'admin',
+    component: LoginComponent,
+  },
+  {
     path: 'offer-upload',
     component: OfferUploadComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'product-upload',
     component: ProductUploadComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'home',

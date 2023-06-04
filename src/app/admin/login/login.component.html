@@ -1,0 +1,14 @@
+<section
+  [formGroup]="loginForm"
+  class="flex align-items-center flex-column gap-3 my-3"
+>
+  <div>
+    <p>Name:</p>
+    <input type="text" pInputText formControlName="username" />
+  </div>
+  <div>
+    <p>Password:</p>
+    <p-password formControlName="password" [feedback]="false"></p-password>
+  </div>
+  <p-button label="Login" (onClick)="onSubmit()"></p-button>
+</section>
