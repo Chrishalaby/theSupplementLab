@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -35,7 +36,8 @@ export class OfferUploadComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private readonly httpClient: HttpClient,
     private readonly proxyService: ProxyService,
-    private readonly messageService: MessageService
+    private readonly messageService: MessageService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -86,5 +88,9 @@ export class OfferUploadComponent implements OnInit {
           });
         });
     });
+  }
+
+  switchToProduct() {
+    this.router.navigate(['/product-upload']);
   }
 }

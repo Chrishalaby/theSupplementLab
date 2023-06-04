@@ -13,6 +13,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ProxyService } from 'src/app/proxy.service';
 
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
@@ -68,7 +69,8 @@ export class ProductUploadComponent implements OnInit {
     private readonly formBuilder: FormBuilder,
     private readonly sanitizer: DomSanitizer,
     private readonly messageService: MessageService,
-    private readonly httpClient: HttpClient
+    private readonly httpClient: HttpClient,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -220,5 +222,9 @@ export class ProductUploadComponent implements OnInit {
     );
 
     this.selectedInventoryStatus = selectedStatus?.VALUE || '';
+  }
+
+  switchToOffer() {
+    this.router.navigate(['/offer-upload']);
   }
 }
