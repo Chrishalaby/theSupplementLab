@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<form [formGroup]="addOfferForm" class="grid mt-2">
+  <div class="col-12 md:col-6 flex flex-column align-items-center">
+    <div class="card">
+      <div class="flex flex-column gap-2">
+        <div>
+          <p>Upload Image:</p>
+          <p-fileUpload
+            mode="basic"
+            accept="image/*"
+            [maxFileSize]="10000000"
+            (onSelect)="onSelectedFile($event)"
+            [auto]="true"
+            chooseLabel="Image"
+            [multiple]="true"
+          ></p-fileUpload>
+        </div>
+        <div>
+          <p>Name:</p>
+          <input type="text" pInputText formControlName="NAME" />
+        </div>
+        <div>
+          <p>Price:</p>
+          <p-inputNumber formControlName="PRICE"></p-inputNumber>
+        </div>
+        <div>
+          <p>Description:</p>
+          <textarea
+            pInputTextarea
+            formControlName="DESCRIPTION"
+            [autoResize]="true"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <p-button
+      icon="pi pi-plus"
+      label="Submit"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </div>
+  <div class="col-12 md:col-6">
+    <div
+      class="product-item"
+      style="background-image: url(assets/images/TSE.png); opacity: 0.5"
+    >
+      <div class="product-item-content">
+        <div class="mb-3">
+          <img *ngIf="firstImageUrl" [src]="firstImageUrl" class="h-10rem" />
+        </div>
+        <div>
+          <h2>{{ addOfferForm.get("NAME")?.value }}</h2>
+          <h3 class="font-bold text-xl">
+            ${{ addOfferForm.get("PRICE")?.value }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

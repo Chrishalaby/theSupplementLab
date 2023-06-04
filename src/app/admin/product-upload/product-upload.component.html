@@ -1,0 +1,129 @@
+<p-toast></p-toast>
+<form [formGroup]="addProductForm" class="grid mt-2">
+  <div class="col-12 md:col-6 flex flex-column align-items-center">
+    <div class="card">
+      <div class="flex flex-column gap-2">
+        <div>
+          <p>Upload Image:</p>
+          <p-fileUpload
+            mode="basic"
+            accept="image/*"
+            [maxFileSize]="10000000"
+            (onSelect)="onSelectedFile($event)"
+            [auto]="true"
+            chooseLabel="Image"
+            [multiple]="true"
+          ></p-fileUpload>
+        </div>
+        <div>
+          <p>Name:</p>
+          <input type="text" pInputText formControlName="NAME" />
+        </div>
+        <div>
+          <p>Price:</p>
+          <p-inputNumber formControlName="PRICE"></p-inputNumber>
+        </div>
+        <span class="flex flex-row">
+          <p-multiSelect
+            [options]="flavors"
+            formControlName="My_Product_flavor"
+            optionLabel="VALUE"
+            placeholder="Select Flavor"
+          ></p-multiSelect>
+          <p-button icon="pi pi-plus" (onClick)="addFlavorValue()"></p-button>
+        </span>
+        <span class="flex flex-row">
+          <p-dropdown
+            [options]="productTypes"
+            formControlName="My_Product_type"
+            optionLabel="TYPE"
+            placeholder="Select Type"
+          ></p-dropdown>
+          <p-button icon="pi pi-plus" (onClick)="addTypeValue()"></p-button>
+        </span>
+        <div>
+          <p>Select Inventory Status:</p>
+          <span class="flex flex-row">
+            <p-dropdown
+              [options]="inventoryStatus"
+              optionLabel="VALUE"
+              optionValue="INVENTORY_STATUS_ID"
+              placeholder="Select Inventory Status"
+              formControlName="INVENTORY_STATUS_ID"
+              (onChange)="updateSelectedInventoryStatus($event.value)"
+            ></p-dropdown>
+            <p-button icon="pi pi-plus" (onClick)="addStatusValue()"></p-button>
+          </span>
+        </div>
+        <div>
+          <p>Description:</p>
+          <textarea
+            pInputTextarea
+            [autoResize]="true"
+            formControlName="DESCRIPTION"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <p-button
+      icon="pi pi-plus"
+      label="Submit"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </div>
+  <div class="col-12 md:col-6">
+    <div class="card h-full">
+      <div class="product-grid-item card h-full">
+        <div class="product-grid-item-top">
+          <div class="flex flex-row gap-2">
+            <span class="product-category uppercase"
+              >{{ addProductForm.get("My_Product_type")?.value?.TYPE }}
+            </span>
+            <i class="pi pi-tag product-category-icon"></i>
+          </div>
+          <span [class]="'product-badge status-' + selectedInventoryStatus">{{
+            selectedInventoryStatus
+          }}</span>
+        </div>
+        <div class="product-grid-item-content">
+          <img *ngIf="firstImageUrl" [src]="firstImageUrl" />
+          <div class="product-name uppercase">
+            {{ addProductForm.get("NAME")?.value }}
+          </div>
+        </div>
+        <div class="product-grid-item-bottom">
+          <span class="product-price"
+            >${{ addProductForm.get("PRICE")?.value }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<p-dialog
+  header="Add A Flavor"
+  [(visible)]="addFlavorValueDialog"
+  [formGroup]="addFlavorForm"
+>
+  <input type="text" pInputText formControlName="VALUE" />
+  <p-button icon="pi pi-plus" label="ADD" (onClick)="addFlavor()"></p-button>
+</p-dialog>
+
+<p-dialog
+  header="Add A Type"
+  [(visible)]="addTypeValueDialog"
+  [formGroup]="addTypeForm"
+>
+  <input type="text" pInputText formControlName="TYPE" />
+  <p-button icon="pi pi-plus" label="ADD" (onClick)="addType()"></p-button>
+</p-dialog>
+
+<p-dialog
+  header="Add A Status"
+  [(visible)]="addStatusValueDialog"
+  [formGroup]="addStatusForm"
+>
+  <input type="text" pInputText formControlName="VALUE" />
+  <p-button icon="pi pi-plus" label="ADD" (onClick)="addStatus()"></p-button>
+</p-dialog>

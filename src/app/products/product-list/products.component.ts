@@ -9,6 +9,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { debounceTime, tap } from 'rxjs';
+import { ProxyService } from 'src/app/proxy.service';
 import { CartProductsComponent } from '../cart-products/cart-products.component';
 import { ProductOverviewComponent } from '../product-overview/product-overview.component';
 import { Product } from '../shared/model/cart.model';
@@ -61,11 +62,19 @@ export class ProductsComponent {
 
   @ViewChild('dv') dataView!: DataView;
 
+  prod: any;
+  prodParamitem = {
+    NAME: '',
+    DESCRIPTION: '',
+    PRODUCT_TYPE_ID_LIST: [],
+    INVENTORY_STATUS_ID_LIST: [],
+  };
   constructor(
     private readonly httpClient: HttpClient,
     private readonly formBuilder: FormBuilder,
     private messageService: MessageService,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private readonly proxyService: ProxyService
   ) {}
 
   ngOnInit(): void {
@@ -83,6 +92,12 @@ export class ProductsComponent {
       ?.valueChanges.pipe(debounceTime(300))
       .subscribe((e) => {
         this.dataView.filter(e);
+      });
+    this.proxyService
+      .Get_Product_By_Where_InList_Adv(this.prodParamitem)
+      .subscribe((data) => {
+        this.prod = data;
+        console.log(data);
       });
   }
 
