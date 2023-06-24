@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DataView, DataViewModule } from 'primeng/dataview';
@@ -10,6 +10,8 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { debounceTime } from 'rxjs';
+import { AuthService } from 'src/app/admin/login/service/auth.service';
+import { ProductService } from 'src/app/admin/service/product.service';
 import { ProxyService } from 'src/app/proxy.service';
 import { CartProductsComponent } from '../cart-products/cart-products.component';
 import { ProductOverviewComponent } from '../product-overview/product-overview.component';
@@ -33,8 +35,8 @@ import { Product } from '../shared/model/cart.model';
 })
 export class ProductsComponent {
   products: any[] = [];
-
   productTypes: any[] = [];
+  isLoggedIn: boolean = false;
 
   search: FormControl = new FormControl('');
 
@@ -47,14 +49,17 @@ export class ProductsComponent {
     INVENTORY_STATUS_ID_LIST: [] as number[],
   };
   constructor(
-    private readonly httpClient: HttpClient,
-    private readonly formBuilder: FormBuilder,
     private messageService: MessageService,
     public dialogService: DialogService,
-    private readonly proxyService: ProxyService
+    private readonly proxyService: ProxyService,
+    private authService: AuthService,
+    private readonly productService: ProductService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.canLogin;
+
     this.getProducts();
 
     this.proxyService
@@ -108,5 +113,11 @@ export class ProductsComponent {
           });
         }
       });
+  }
+
+  onEdit(product: any) {
+    this.productService.product = { ...product };
+    this.productService.editProduct = true;
+    this.router.navigate(['/product-upload']);
   }
 }

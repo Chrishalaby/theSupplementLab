@@ -16,6 +16,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product-upload',
@@ -70,23 +71,40 @@ export class ProductUploadComponent implements OnInit {
     private readonly sanitizer: DomSanitizer,
     private readonly messageService: MessageService,
     private readonly httpClient: HttpClient,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly productService: ProductService
   ) {}
 
   ngOnInit(): void {
-    this.addProductForm = this.formBuilder.group({
-      PRODUCT_ID: -1,
-      NAME: '',
-      DESCRIPTION: '',
-      PRICE: 0,
-      ENTRY_DATE: 0,
-      PRODUCT_TYPE_ID: 0,
-      INVENTORY_STATUS_ID: 0,
-      My_Product_type: [],
-      My_Inventory_status: null,
-      My_Product_flavor: [],
-    });
-
+    console.log(this.productService.product);
+    if (this.productService.editProduct) {
+      this.addProductForm = this.formBuilder.group({
+        PRODUCT_ID: this.productService.product.PRODUCT_ID,
+        NAME: this.productService.product.NAME,
+        DESCRIPTION: this.productService.product.DESCRIPTION,
+        PRICE: this.productService.product.PRICE,
+        ENTRY_DATE: this.productService.product.ENTRY_DATE,
+        PRODUCT_TYPE_ID: this.productService.product.PRODUCT_TYPE_ID,
+        INVENTORY_STATUS_ID: this.productService.product.INVENTORY_STATUS_ID,
+        My_Product_type: this.productService.product.My_Product_type,
+        My_Inventory_status: null,
+        My_Product_flavor: this.productService.product.My_Product_flavor,
+        My_Uploaded_files: this.productService.product.My_Uploaded_files,
+      });
+    } else {
+      this.addProductForm = this.formBuilder.group({
+        PRODUCT_ID: -1,
+        NAME: '',
+        DESCRIPTION: '',
+        PRICE: 0,
+        ENTRY_DATE: 0,
+        PRODUCT_TYPE_ID: 0,
+        INVENTORY_STATUS_ID: 0,
+        My_Product_type: [],
+        My_Inventory_status: null,
+        My_Product_flavor: [],
+      });
+    }
     this.proxyService
       .Get_Flavor_By_OWNER_ID({ OWNER_ID: 1 })
       .subscribe((data) => {
@@ -109,6 +127,10 @@ export class ProductUploadComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.productService.editProduct) {
+      this.productService.editProduct = false;
+    }
+
     this.addProductForm
       .get('PRODUCT_TYPE_ID')
       ?.patchValue(
