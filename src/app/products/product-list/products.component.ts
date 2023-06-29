@@ -120,4 +120,16 @@ export class ProductsComponent {
     this.productService.editProduct = true;
     this.router.navigate(['/product-upload']);
   }
+  onDelete(product: any) {
+    this.proxyService
+      .Delete_Product({ PRODUCT_ID: product.PRODUCT_ID })
+      .subscribe(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Product Deleted',
+        });
+        this.getProducts();
+      });
+  }
 }

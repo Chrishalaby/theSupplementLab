@@ -110,6 +110,12 @@
                 styleClass="p-button-rounded"
                 (onClick)="onEdit(product)"
               ></p-button>
+              <p-button
+                *ngIf="isLoggedIn"
+                icon="pi pi-trash"
+                styleClass="p-button-rounded"
+                (onClick)="onDelete(product)"
+              ></p-button>
             </div>
           </div>
         </a>

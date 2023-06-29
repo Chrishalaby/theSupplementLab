@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { tap } from 'rxjs';
+import { AuthService } from '../admin/login/service/auth.service';
 import { Offer, Product } from '../products/shared/model/cart.model';
+import { Params_Delete_Offer, ProxyService } from '../proxy.service';
 
 export interface BrandIcons {
   id: number;
@@ -32,10 +35,19 @@ export class HomeComponent {
     },
   ];
 
+  isLoggedIn: boolean = false;
+
   brandIcons: BrandIcons[] = [];
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(
+    private readonly httpClient: HttpClient,
+    private readonly authService: AuthService,
+    private readonly proxyService: ProxyService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.canLogin;
+
     this.httpClient
       .get<Product>('assets/offers.json')
       .pipe(
@@ -52,5 +64,17 @@ export class HomeComponent {
         })
       )
       .subscribe();
+  }
+
+  onDelete(offer: Params_Delete_Offer) {
+    this.proxyService
+      .Delete_Offer({ OFFER_ID: offer.OFFER_ID })
+      .subscribe((data) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Offer Deleted',
+        });
+      });
   }
 }
