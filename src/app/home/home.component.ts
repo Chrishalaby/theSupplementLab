@@ -69,7 +69,7 @@ export class HomeComponent {
   onDelete(offer: Params_Delete_Offer) {
     this.proxyService
       .Delete_Offer({ OFFER_ID: offer.OFFER_ID })
-      .subscribe((data) => {
+      .subscribe(() => {
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
