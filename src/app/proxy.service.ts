@@ -7,7 +7,7 @@ import { CommonService } from 'src/app/common.service';
   providedIn: 'root',
 })
 export class ProxyService {
-  APIBaseUrl = 'https://13.51.195.72/api/Data/';
+  APIBaseUrl = 'https://13.51.195.72/api/Data';
   url = '';
   constructor(public api: HttpClient, private common: CommonService) {}
   Get_Product_By_OWNER_ID(

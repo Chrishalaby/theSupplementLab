@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CommonService {
-  public APIUrl = 'https://13.51.195.72/api/Data/';
+  public APIUrl = 'https://13.51.195.72/api/Data';
   public ticket = '';
   // Is_Logged_In = new BehaviorSubject<boolean>(false);
   // UI_Direction = new BehaviorSubject<string>('ltr');
