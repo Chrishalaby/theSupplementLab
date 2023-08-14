@@ -96,6 +96,7 @@ export class ProductUploadComponent implements OnInit {
         PRODUCT_ID: -1,
         NAME: '',
         DESCRIPTION: '',
+        SUGGESTED_USE: '',
         PRICE: 0,
         ENTRY_DATE: 0,
         PRODUCT_TYPE_ID: 0,
