@@ -79,13 +79,14 @@ export class ProductUploadComponent implements OnInit {
     console.log(this.productService.product);
     if (this.productService.editProduct) {
       this.addProductForm = this.formBuilder.group({
-        PRODUCT_ID: this.productService.product.PRODUCT_ID,
-        NAME: this.productService.product.NAME,
-        DESCRIPTION: this.productService.product.DESCRIPTION,
-        PRICE: this.productService.product.PRICE,
-        ENTRY_DATE: this.productService.product.ENTRY_DATE,
-        PRODUCT_TYPE_ID: this.productService.product.PRODUCT_TYPE_ID,
-        INVENTORY_STATUS_ID: this.productService.product.INVENTORY_STATUS_ID,
+        PRODUCT_ID: this.productService.product.PRODUCT_ID || -1,
+        NAME: this.productService.product.NAME || '',
+        DESCRIPTION: this.productService.product.DESCRIPTION || '',
+        PRICE: this.productService.product.PRICE || 0,
+        ENTRY_DATE: this.productService.product.ENTRY_DATE || 0,
+        PRODUCT_TYPE_ID: this.productService.product.PRODUCT_TYPE_ID || 0,
+        INVENTORY_STATUS_ID:
+          this.productService.product.INVENTORY_STATUS_ID || 0,
         My_Product_type: this.productService.product.My_Product_type,
         My_Inventory_status: null,
         My_Product_flavor: this.productService.product.My_Product_flavor,
