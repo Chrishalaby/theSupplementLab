@@ -483,6 +483,7 @@ export class Product {
   My_Product_flavor!: Product_flavor[];
   My_Uploaded_files!: Uploaded_file[];
   My_Image_Url!: Uploaded_file;
+  SUGGESTED_USE!: string;
 }
 export class Product_type {
   PRODUCT_TYPE_ID?: number;

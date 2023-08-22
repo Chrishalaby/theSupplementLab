@@ -7,10 +7,10 @@
         <div>
           <p>Upload Image:</p>
           <p-fileUpload
-            mode="basic"
             accept="image/*"
             [maxFileSize]="10000000"
             (onSelect)="onSelectedFile($event)"
+            (onRemove)="onRemovedFile($event)"
             [auto]="true"
             chooseLabel="Image"
             [multiple]="true"
@@ -69,7 +69,7 @@
           <textarea
             pInputTextarea
             [autoResize]="true"
-            formControlName="DESCRIPTION"
+            formControlName="SUGGESTED_USE"
           ></textarea>
         </div>
       </div>

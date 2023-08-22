@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { CrudComponent } from './admin/crud/crud.component';
 import { LoginComponent } from './admin/login/login.component';
 import { AuthGuardService } from './admin/login/service/auth-guard.service';
 import { OfferUploadComponent } from './admin/offer-upload/offer-upload.component';
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+  },
+  {
+    path: 'new-product-upload',
+    component: CrudComponent,
   },
   {
     path: '**',

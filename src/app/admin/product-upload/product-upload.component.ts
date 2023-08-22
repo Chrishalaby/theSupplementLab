@@ -12,10 +12,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ProxyService } from 'src/app/proxy.service';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { CommonService } from 'src/app/common.service';
 import { ProductService } from '../service/product.service';
 
 @Component({
@@ -72,7 +73,8 @@ export class ProductUploadComponent implements OnInit {
     private readonly messageService: MessageService,
     private readonly httpClient: HttpClient,
     private readonly router: Router,
-    private readonly productService: ProductService
+    private readonly productService: ProductService,
+    private readonly common: CommonService
   ) {}
 
   ngOnInit(): void {
@@ -89,8 +91,9 @@ export class ProductUploadComponent implements OnInit {
           this.productService.product.INVENTORY_STATUS_ID || 0,
         My_Product_type: this.productService.product.My_Product_type,
         My_Inventory_status: null,
-        My_Product_flavor: this.productService.product.My_Product_flavor,
-        My_Uploaded_files: this.productService.product.My_Uploaded_files,
+        My_Product_flavor: this.productService.product.My_Product_flavor || [],
+        My_Uploaded_files: this.productService.product.My_Uploaded_files || [],
+        SUGGESTED_USE: this.productService.product.SUGGESTED_USE || '',
       });
     } else {
       this.addProductForm = this.formBuilder.group({
@@ -142,11 +145,18 @@ export class ProductUploadComponent implements OnInit {
     this.proxyService
       .Edit_Product(this.addProductForm.value)
       .subscribe((data) => {
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          ticket: this.common.ticket,
+        });
+        const options = { headers: headers };
+
         this.httpClient
           .post(
             this.proxyService.APIBaseUrl +
               `/Upload_Image?REL_ENTITY=[TBL_PRODUCT]&REL_KEY=${data.PRODUCT_ID}&REL_FIELD=PRODUCT_IMAGE`,
-            this.formData
+            this.formData,
+            options
           )
           .subscribe(() => {
             this.messageService.add({
@@ -154,6 +164,10 @@ export class ProductUploadComponent implements OnInit {
               summary: 'Success',
               detail: 'Product Added Successfully',
             });
+
+            this.addProductForm.reset();
+            this.files = [];
+            this.formData = new FormData();
           });
       });
   }
@@ -165,12 +179,17 @@ export class ProductUploadComponent implements OnInit {
     if (event.files && event.files.length > 0) {
       for (let file of event.files) {
         this.files.push(file);
+        this.formData.append(file.name, file);
       }
     }
+  }
 
-    for (let file of this.files) {
-      this.formData.append(file.name, file);
+  onRemovedFile(event: any) {
+    const index = this.files.findIndex((f) => f.name === event.file.name);
+    if (index !== -1) {
+      this.files.splice(index, 1);
     }
+    this.formData.delete(event.file.name);
   }
 
   get firstImageUrl() {
