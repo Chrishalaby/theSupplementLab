@@ -12,7 +12,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ProxyService } from 'src/app/proxy.service';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -145,18 +145,11 @@ export class ProductUploadComponent implements OnInit {
     this.proxyService
       .Edit_Product(this.addProductForm.value)
       .subscribe((data) => {
-        const headers = new HttpHeaders({
-          'Content-Type': 'application/json',
-          ticket: this.common.ticket,
-        });
-        const options = { headers: headers };
-
         this.httpClient
           .post(
             this.proxyService.APIBaseUrl +
               `/Upload_Image?REL_ENTITY=[TBL_PRODUCT]&REL_KEY=${data.PRODUCT_ID}&REL_FIELD=PRODUCT_IMAGE`,
-            this.formData,
-            options
+            this.formData
           )
           .subscribe(() => {
             this.messageService.add({
