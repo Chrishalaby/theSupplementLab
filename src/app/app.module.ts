@@ -21,6 +21,7 @@ import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ import { HomeComponent } from './home/home.component';
     RatingModule,
     ButtonModule,
     DropdownModule,
+    ToastModule,
     DataViewModule,
     HttpClientModule,
     MenubarModule,

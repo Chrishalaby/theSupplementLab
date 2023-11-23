@@ -28,19 +28,29 @@
         <ng-template pTemplate="right">
           <p-fileUpload
             mode="basic"
-            accept="image/*"
+            accept=".xlsx, .xls"
             [maxFileSize]="1000000"
             label="Import"
             chooseLabel="Import"
             class="mr-2 inline-block"
+            (onSelect)="importProducts($event)"
           ></p-fileUpload>
           <button
             pButton
             pRipple
-            label="Export"
+            label="Export CSV"
             icon="pi pi-upload"
             class="p-button-help"
-            (click)="dt.exportCSV()"
+            (click)="exportToCSV()"
+          ></button>
+
+          <button
+            pButton
+            pRipple
+            label="Export PDF"
+            icon="pi pi-upload"
+            class="p-button-help"
+            (click)="exportToPDF()"
           ></button>
         </ng-template>
       </p-toolbar>
@@ -89,6 +99,7 @@
             <th style="width: 3rem">
               <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
             </th>
+            <th>Image</th>
             <th pSortableColumn="NAME">
               Name <p-sortIcon field="NAME"></p-sortIcon>
             </th>
@@ -103,14 +114,25 @@
             <td>
               <p-tableCheckbox [value]="product"></p-tableCheckbox>
             </td>
+            <td>
+              <img
+                src="{{ product.My_Uploaded_files[0].My_URL }}"
+                alt="{{ product.My_Uploaded_files[0].STAMP }}"
+                class="product-image"
+              />
+            </td>
             <td style="width: 20%; min-width: 10rem">
               {{ product.NAME }}
             </td>
             <td style="width: 30%; min-width: 15rem">
-              {{ product.DESCRIPTION }}
+              <div class="truncate" title="{{ product.description }}">
+                {{ product.DESCRIPTION }}
+              </div>
             </td>
             <td style="width: 20%; min-width: 10rem">
-              {{ product.SUGGESTED_USE }}
+              <div class="truncate" title="{{ product.SUGGESTED_USE }}">
+                {{ product.SUGGESTED_USE }}
+              </div>
             </td>
             <td style="width: 20%; min-width: 10rem">
               {{ product.PRICE }}

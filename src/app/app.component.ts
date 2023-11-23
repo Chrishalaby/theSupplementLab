@@ -5,14 +5,14 @@ import { Carousel } from 'primeng/carousel';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  // styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'The Supplement Lab';
   constructor(private primengConfig: PrimeNGConfig) {
-    Carousel.prototype.onTouchMove = () => { };
+    Carousel.prototype.onTouchMove = () => {};
   }
   ngOnInit() {
-      this.primengConfig.ripple = true;
+    this.primengConfig.ripple = true;
   }
 }

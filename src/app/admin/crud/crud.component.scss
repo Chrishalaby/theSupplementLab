@@ -1,0 +1,14 @@
+.truncate {
+  width: 250px; /* Adjust as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-image {
+  max-height: 100px; /* Adjust as needed */
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
