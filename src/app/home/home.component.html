@@ -31,18 +31,21 @@
       [showIndicators]="false"
     >
       <ng-template let-product pTemplate="item">
-        <div class="product-item">
+        <div
+          class="product-item cursor-hover"
+          (click)="showProductOverview(product)"
+        >
           <div class="product-item-content">
             <div class="mb-3">
               <img
-                [src]="'assets/images/OFFERS/' + product.image"
-                [alt]="product.name"
+                [src]="product.My_Uploaded_files[0].My_URL"
+                [alt]="product.NAME"
                 class="product-image"
               />
             </div>
             <div>
-              <h2 class="mt-5">{{ product.name }}</h2>
-              <h3 class="font-bold text-2xl">${{ product.price }}</h3>
+              <h2 class="mt-5">{{ product.NAME }}</h2>
+              <h3 class="font-bold text-2xl">${{ product.PRICE }}</h3>
             </div>
           </div>
         </div>
@@ -74,19 +77,22 @@
     [showNavigators]="false"
   >
     <ng-template let-product pTemplate="item">
-      <div class="product-item">
+      <div
+        class="product-item cursor-hover"
+        (click)="showProductOverview(product)"
+      >
         <div class="product-item-content item-dark">
           <div class="mb-3">
             <img
-              [src]="'assets/images/OFFERS/' + product.image"
-              [alt]="product.name"
+              [src]="product.My_Uploaded_files[0].My_URL"
+              [alt]="product.NAME"
               class="product-image image-dark"
             />
           </div>
           <div class="flex flex-row justify-content-around">
             <div>
-              <h4 class="mb-1">{{ product.name }}</h4>
-              <h6 class="mt-0 mb-3 font-bold text-xl">${{ product.price }}</h6>
+              <h4 class="mb-1">{{ product.NAME }}</h4>
+              <h6 class="mt-0 mb-3 font-bold text-xl">${{ product.PRICE }}</h6>
             </div>
             <p-button
               *ngIf="isLoggedIn"

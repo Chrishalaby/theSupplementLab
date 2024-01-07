@@ -1,164 +1,169 @@
-<div class="grid">
-  <div class="col-12">
-    <div class="card px-6 py-6">
-      <p-toast></p-toast>
-      <p-toolbar styleClass="mb-4">
-        <ng-template pTemplate="left">
-          <div class="my-2">
-            <button
-              pButton
-              pRipple
-              label="New"
-              icon="pi pi-plus"
-              class="p-button-success mr-2"
-              (click)="openNew()"
-            ></button>
-            <button
-              pButton
-              pRipple
-              label="Delete"
-              icon="pi pi-trash"
-              class="p-button-danger"
-              (click)="deleteSelectedProducts()"
-              [disabled]="!selectedProducts || !selectedProducts.length"
-            ></button>
-          </div>
-        </ng-template>
-
-        <ng-template pTemplate="right">
-          <p-fileUpload
-            mode="basic"
-            accept=".xlsx, .xls"
-            [maxFileSize]="1000000"
-            label="Import"
-            chooseLabel="Import"
-            class="mr-2 inline-block"
-            (onSelect)="importProducts($event)"
-          ></p-fileUpload>
+<div class="card">
+  <div class="py-6">
+    <p-toolbar styleClass="mb-4">
+      <ng-template pTemplate="left">
+        <div class="my-2">
           <button
             pButton
             pRipple
-            label="Export CSV"
-            icon="pi pi-upload"
-            class="p-button-help"
-            (click)="exportToCSV()"
+            label="New"
+            icon="pi pi-plus"
+            class="p-button-success mr-2"
+            (click)="openNew()"
           ></button>
-
           <button
             pButton
             pRipple
-            label="Export PDF"
-            icon="pi pi-upload"
-            class="p-button-help"
-            (click)="exportToPDF()"
+            label="Delete"
+            icon="pi pi-trash"
+            class="p-button-danger mr-2"
+            (click)="deleteSelectedProducts()"
+            [disabled]="!selectedProducts || !selectedProducts.length"
           ></button>
-        </ng-template>
-      </p-toolbar>
+          <button
+            pButton
+            pRipple
+            label="Settings"
+            icon="pi pi-cog"
+            class="p-button-danger"
+            (click)="editSettings()"
+          ></button>
+        </div>
+      </ng-template>
 
-      <p-table
-        #dt
-        [value]="products"
-        [columns]="cols"
-        responsiveLayout="scroll"
-        [rows]="10"
-        [globalFilterFields]="[
-          'name',
-          'country.name',
-          'representative.name',
-          'status'
-        ]"
-        [rows]="10"
-        [paginator]="true"
-        [rowsPerPageOptions]="[10, 20, 30]"
-        [showCurrentPageReport]="true"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-        [(selection)]="selectedProducts"
-        selectionMode="multiple"
-        [rowHover]="true"
-        dataKey="id"
-      >
-        <ng-template pTemplate="caption">
-          <div
-            class="flex flex-column md:flex-row md:justify-content-between md:align-items-center"
-          >
-            <h5 class="m-0">Manage Products</h5>
-            <span class="block mt-2 md:mt-0 p-input-icon-left">
-              <i class="pi pi-search"></i>
-              <input
-                pInputText
-                type="text"
-                (input)="onGlobalFilter(dt, $event)"
-                placeholder="Search..."
-                class="w-full sm:w-auto"
-              />
-            </span>
-          </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-          <tr>
-            <th style="width: 3rem">
-              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-            </th>
-            <th>Image</th>
-            <th pSortableColumn="NAME">
-              Name <p-sortIcon field="NAME"></p-sortIcon>
-            </th>
-            <th>Description</th>
-            <th>Suggested Use</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-          <tr>
-            <td>
-              <p-tableCheckbox [value]="product"></p-tableCheckbox>
-            </td>
-            <td>
-              <img
-                src="{{ product.My_Uploaded_files[0].My_URL }}"
-                alt="{{ product.My_Uploaded_files[0].STAMP }}"
-                class="product-image"
-              />
-            </td>
-            <td style="width: 20%; min-width: 10rem">
-              {{ product.NAME }}
-            </td>
-            <td style="width: 30%; min-width: 15rem">
-              <div class="truncate" title="{{ product.description }}">
-                {{ product.DESCRIPTION }}
-              </div>
-            </td>
-            <td style="width: 20%; min-width: 10rem">
-              <div class="truncate" title="{{ product.SUGGESTED_USE }}">
-                {{ product.SUGGESTED_USE }}
-              </div>
-            </td>
-            <td style="width: 20%; min-width: 10rem">
-              {{ product.PRICE }}
-            </td>
-            <td>
-              <div class="flex">
-                <button
-                  pButton
-                  pRipple
-                  icon="pi pi-pencil"
-                  class="p-button-rounded p-button-success mr-2"
-                  (click)="editProduct(product)"
-                ></button>
-                <button
-                  pButton
-                  pRipple
-                  icon="pi pi-trash"
-                  class="p-button-rounded p-button-warning"
-                  (click)="deleteProduct(product)"
-                ></button>
-              </div>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
-    </div>
+      <ng-template pTemplate="right">
+        <p-fileUpload
+          mode="basic"
+          accept=".xlsx, .xls"
+          [maxFileSize]="1000000"
+          label="Import"
+          chooseLabel="Import"
+          class="mr-2 inline-block"
+          (onSelect)="importProducts($event)"
+        ></p-fileUpload>
+        <button
+          pButton
+          pRipple
+          label="Export CSV"
+          icon="pi pi-upload"
+          class="mr-2 p-button-help"
+          (click)="exportToCSV()"
+        ></button>
+
+        <button
+          pButton
+          pRipple
+          label="Export PDF"
+          icon="pi pi-upload"
+          class="p-button-help"
+          (click)="exportToPDF()"
+        ></button>
+      </ng-template>
+    </p-toolbar>
+
+    <p-table
+      #dt
+      [value]="products"
+      [columns]="cols"
+      responsiveLayout="scroll"
+      [rows]="10"
+      [globalFilterFields]="[
+        'name',
+        'country.name',
+        'representative.name',
+        'status'
+      ]"
+      [rows]="10"
+      [paginator]="true"
+      [rowsPerPageOptions]="[10, 20, 30]"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [(selection)]="selectedProducts"
+      selectionMode="multiple"
+      [rowHover]="true"
+      dataKey="id"
+    >
+      <ng-template pTemplate="caption">
+        <div
+          class="flex flex-column md:flex-row md:justify-content-between md:align-items-center"
+        >
+          <h5 class="m-0">Manage Products</h5>
+          <span class="block mt-2 md:mt-0 p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              (input)="onGlobalFilter(dt, $event)"
+              placeholder="Search..."
+              class="w-full sm:w-auto"
+            />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th>Image</th>
+          <th pSortableColumn="NAME">
+            Name <p-sortIcon field="NAME"></p-sortIcon>
+          </th>
+          <th>Description</th>
+          <th>Suggested Use</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="product"></p-tableCheckbox>
+          </td>
+          <td>
+            <img
+              src="{{ product.My_Uploaded_files[0].My_URL }}"
+              alt="{{ product.My_Uploaded_files[0].STAMP }}"
+              class="product-image"
+            />
+          </td>
+          <td style="width: 20%; min-width: 10rem">
+            {{ product.NAME }}
+          </td>
+          <td style="width: 30%; min-width: 15rem">
+            <div class="truncate" title="{{ product.description }}">
+              {{ product.DESCRIPTION }}
+            </div>
+          </td>
+          <td style="width: 20%; min-width: 10rem">
+            <div class="truncate" title="{{ product.SUGGESTED_USE }}">
+              {{ product.SUGGESTED_USE }}
+            </div>
+          </td>
+          <td style="width: 20%; min-width: 10rem">
+            {{ product.PRICE }}
+          </td>
+          <td>
+            <div class="flex">
+              <button
+                pButton
+                pRipple
+                icon="pi pi-pencil"
+                class="p-button-rounded p-button-success mr-2"
+                (click)="editProduct(product)"
+              ></button>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-warning"
+                (click)="deleteProduct(product)"
+              ></button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
 
     <p-dialog
       [(visible)]="productDialog"

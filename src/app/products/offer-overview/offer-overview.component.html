@@ -1,0 +1,65 @@
+<section class="grid">
+  <div class="md:col-6 col-12">
+    <p-galleria
+      [value]="productOverview.My_Uploaded_files"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '640px' }"
+      [showThumbnailNavigators]="false"
+      [showThumbnails]="false"
+      [showItemNavigators]="true"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img
+          [src]="item.My_URL"
+          style="width: 70%"
+          [alt]="productOverview.NAME"
+        />
+      </ng-template>
+    </p-galleria>
+  </div>
+  <div class="md:col-6 col-12">
+    <div class="flex gap-2 flex-column">
+      <h1 class="text-5xl uppercase">
+        {{ productOverview.NAME }}
+      </h1>
+      <p class="text-4xl font-bold">${{ productOverview.PRICE }}</p>
+      <div
+        class="md:mt-4 mt-2 flex md:flex-row flex-column justify-content-between gap-4"
+      >
+        <span class="flex flex-column gap-2">
+          <p>Quantity</p>
+          <p-inputNumber
+            [showButtons]="true"
+            buttonLayout="horizontal"
+            [min]="1"
+            [max]="5"
+            spinnerMode="horizontal"
+            decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
+            [allowEmpty]="false"
+            (onInput)="onQuantityChange($event)"
+          ></p-inputNumber>
+        </span>
+        <div class="flex flex-column gap-1">
+          <p-button
+            icon="pi pi-shopping-cart"
+            label="Add To Cart"
+            (onClick)="addToCart()"
+          ></p-button>
+        </div>
+      </div>
+      <p-card header="Description" class="md:mt-6 mt-3">
+        <p class="m-0 text-justify">
+          {{ productOverview.DESCRIPTION }}
+        </p>
+      </p-card>
+      <!-- <p-card header="Suggested Use" class="md:mt-6 mt-3">
+        <p class="m-0 text-justify">
+          {{ productOverview.SUGGESTED_USE }}
+        </p>
+      </p-card> -->
+    </div>
+  </div>
+</section>

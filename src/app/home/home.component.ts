@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { tap } from 'rxjs';
+import { DialogService } from 'primeng/dynamicdialog';
 import { AuthService } from '../admin/login/service/auth.service';
-import { Offer, Product } from '../products/shared/model/cart.model';
+import { OfferOverviewComponent } from '../products/offer-overview/offer-overview.component';
 import { Params_Delete_Offer, ProxyService } from '../proxy.service';
 
 export interface BrandIcons {
@@ -15,8 +14,8 @@ export interface BrandIcons {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  offers: Offer[] = [];
+export class HomeComponent implements OnInit {
+  offers: any[] = [];
   responsiveOptions = [
     {
       breakpoint: '1024px',
@@ -39,31 +38,18 @@ export class HomeComponent {
 
   brandIcons: BrandIcons[] = [];
   constructor(
-    private readonly httpClient: HttpClient,
     private readonly authService: AuthService,
     private readonly proxyService: ProxyService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    public dialogService: DialogService
   ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.canLogin;
 
-    this.httpClient
-      .get<Product>('assets/offers.json')
-      .pipe(
-        tap((products: any) => {
-          this.offers = products.offers;
-        })
-      )
-      .subscribe();
-    this.httpClient
-      .get<BrandIcons>('assets/products.json')
-      .pipe(
-        tap((brandIcons: any) => {
-          this.brandIcons = brandIcons.brandIcons;
-        })
-      )
-      .subscribe();
+    this.proxyService.Get_Offer_By_Where(1).subscribe((products: any) => {
+      this.offers = products.My_Result;
+    });
   }
 
   onDelete(offer: Params_Delete_Offer) {
@@ -75,6 +61,24 @@ export class HomeComponent {
           summary: 'Success',
           detail: 'Offer Deleted',
         });
+      });
+  }
+
+  showProductOverview(product: any) {
+    this.dialogService
+      .open(OfferOverviewComponent, {
+        data: product,
+        header: 'Offer Overview',
+        width: '90%',
+      })
+      .onClose.subscribe((added) => {
+        if (added) {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Offer Added To Cart',
+          });
+        }
       });
   }
 }

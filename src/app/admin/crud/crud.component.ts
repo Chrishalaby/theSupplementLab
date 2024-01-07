@@ -543,6 +543,10 @@ export class CrudComponent implements OnInit, OnDestroy {
     });
   }
 
+  editSettings() {
+    console.log('edit settings');
+  }
+
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();

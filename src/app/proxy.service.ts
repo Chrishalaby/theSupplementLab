@@ -81,9 +81,7 @@ export class ProxyService {
         })
       );
   }
-  Get_Offer_By_Where(
-    i_Params_Get_Offer_By_Where: Params_Get_Offer_By_Where
-  ): Observable<Result_Get_Offer_By_Where> {
+  Get_Offer_By_Where(OWNER_ID: number): Observable<Result_Get_Offer_By_Where> {
     this.url =
       this.APIBaseUrl + '/Get_Offer_By_Where?Ticket=' + this.common.ticket;
     const headers = new HttpHeaders({
@@ -94,7 +92,8 @@ export class ProxyService {
     return this.api
       .post<Result_Get_Offer_By_Where>(
         this.url,
-        JSON.stringify(i_Params_Get_Offer_By_Where),
+        // JSON.stringify(i_Params_Get_Offer_By_Where),
+        { OWNER_ID },
         options
       )
       .pipe(
