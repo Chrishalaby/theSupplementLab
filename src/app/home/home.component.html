@@ -32,7 +32,7 @@
     >
       <ng-template let-product pTemplate="item">
         <div
-          class="product-item cursor-hover"
+          class="product-item cursor-pointer"
           (click)="showProductOverview(product)"
         >
           <div class="product-item-content">
@@ -78,7 +78,7 @@
   >
     <ng-template let-product pTemplate="item">
       <div
-        class="product-item cursor-hover"
+        class="product-item cursor-pointer"
         (click)="showProductOverview(product)"
       >
         <div class="product-item-content item-dark">
@@ -101,6 +101,11 @@
               (onClick)="onDelete(product)"
             ></p-button>
           </div>
+          <p-button
+            styleClass="p-button-rounded"
+            label="Buy Now"
+            (onClick)="showProductOverview(product)"
+          ></p-button>
         </div>
       </div>
     </ng-template>
