@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
           detail: 'Offer Deleted',
         });
       });
+    // test
   }
 
   showProductOverview(product: any) {
