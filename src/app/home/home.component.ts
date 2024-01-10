@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
+import { tap } from 'rxjs';
 import { AuthService } from '../admin/login/service/auth.service';
 import { OfferOverviewComponent } from '../products/offer-overview/offer-overview.component';
 import { Params_Delete_Offer, ProxyService } from '../proxy.service';
@@ -41,7 +43,8 @@ export class HomeComponent implements OnInit {
     private readonly authService: AuthService,
     private readonly proxyService: ProxyService,
     private messageService: MessageService,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private readonly httpClient: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +53,15 @@ export class HomeComponent implements OnInit {
     this.proxyService.Get_Offer_By_Where(1).subscribe((products: any) => {
       this.offers = products.My_Result;
     });
+
+    this.httpClient
+      .get<BrandIcons>('assets/products.json')
+      .pipe(
+        tap((brandIcons: any) => {
+          this.brandIcons = brandIcons.brandIcons;
+        })
+      )
+      .subscribe();
   }
 
   onDelete(offer: Params_Delete_Offer) {
