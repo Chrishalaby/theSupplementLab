@@ -1,0 +1,10 @@
+[build]
+command = "npm run build"
+publish = "$CACHEDIR/dist"
+base = "$CACHEDIR"
+
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
