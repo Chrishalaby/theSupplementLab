@@ -54,6 +54,7 @@ const routes: Routes = [
   {
     path: 'new-product-upload',
     component: CrudComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: '**',
