@@ -46,7 +46,7 @@ export class CheckOutComponent {
 
   ngOnInit(): void {
     this.productsCart = this.cartService.getCartItems();
-    this.cartItems = this.getOrderDetails();
+    // this.cartItems = this.getOrderDetails();
     this.userInfo = this.cartService.getUserInfo();
 
     this.calculateTotalPrice();
@@ -61,21 +61,22 @@ export class CheckOutComponent {
     );
   }
 
-  getOrderDetails() {
-    return this.productsCart.map((product: Product) => {
-      return {
-        id: product.id,
-        quantity: product.quantity,
-        chosenFlavor: product.chosenFlavor,
-      };
-    });
-  }
+  // getOrderDetails() {
+  //   return this.productsCart.map((product: Product) => {
+  //     return {
+  //       id: product.id,
+  //       name: product.name,
+  //       quantity: product.quantity,
+  //       chosenFlavor: product.chosenFlavor,
+  //     };
+  //   });
+  // }
 
   checkOut() {
     const url = 'https://formspree.io/f/xnqyzvez';
     const data = {
       userInfo: this.userInfo,
-      products: this.cartItems,
+      products: this.productsCart,
       totalPrice: this.totalPrice,
       invoice: this.invoiceNumber,
       customerId: this.customerId,
