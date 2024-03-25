@@ -18,6 +18,7 @@
           styleClass="mb-2 md:mb-0"
           [showClear]="true"
           class="uppercase"
+          [formControl]="productTypeControl"
         ></p-dropdown>
         <span class="p-input-icon-left mb-2 md:mb-0">
           <i class="pi pi-search"></i>
@@ -40,7 +41,7 @@
       </div>
     </ng-template>
     <ng-template let-product pTemplate="listItem">
-      <div class="col-12">
+      <div class="md:col-12 col-6 my-2">
         <a
           (click)="showProductOverview(product)"
           style="color: white; text-decoration: none; cursor: pointer"
@@ -52,9 +53,11 @@
               [alt]="product.NAME"
             />
             <div class="product-list-detail">
-              <div class="product-name uppercase">{{ product.NAME }}</div>
+              <div class="text-base md:text-2xl uppercase">
+                {{ product.NAME }}
+              </div>
               <div class="flex flex-row gap-2">
-                <span class="product-category uppercase"
+                <span class="text-xs md:text-2xl uppercase"
                   >{{ product.My_Product_type.TYPE }}
                 </span>
                 <i class="pi pi-tag product-category-icon"></i>
@@ -74,25 +77,24 @@
       </div>
     </ng-template>
     <ng-template let-product pTemplate="gridItem">
-      <div class="col-12 md:col-4">
+      <div class="md:col-3 col-6 my-2">
         <a
           (click)="showProductOverview(product)"
           style="color: white; text-decoration: none; cursor: pointer"
         >
-          <div class="product-grid-item card">
-            <div class="product-grid-item-top">
-              <div class="flex flex-row gap-2">
-                <span class="product-category uppercase"
-                  >{{ product.My_Product_type.TYPE }}
-                </span>
-                <i class="pi pi-tag product-category-icon"></i>
-              </div>
+          <div class="product-grid-item md:card">
+            <div class="flex md:flex-row flex-column md:justify-content-around">
+              <span
+                class="md:product-category text-xs md:text-2xl uppercase text-center"
+                >{{ product.My_Product_type.TYPE }}
+              </span>
+              <!-- <i class="pi pi-tag product-category-icon"></i> -->
               <span
                 [class]="
                   'product-badge status-' + product.My_Inventory_status.VALUE
                 "
-                >{{ product.My_Inventory_status.VALUE }}</span
-              >
+                >{{ product.My_Inventory_status.VALUE }}
+              </span>
             </div>
             <div class="product-grid-item-content">
               <img
@@ -100,22 +102,26 @@
                 [src]="product.My_Uploaded_files[0].My_URL"
                 [alt]="product.NAME"
               />
-              <div class="product-name uppercase">{{ product.NAME }}</div>
-            </div>
-            <div class="product-grid-item-bottom">
-              <span class="product-price">${{ product.PRICE }}</span>
-              <p-button
-                *ngIf="isLoggedIn"
-                icon="pi pi-pencil"
-                styleClass="p-button-rounded"
-                (onClick)="onEdit(product)"
-              ></p-button>
-              <p-button
-                *ngIf="isLoggedIn"
-                icon="pi pi-trash"
-                styleClass="p-button-rounded"
-                (onClick)="onDelete(product)"
-              ></p-button>
+              <div class="product-grid-item-bottom">
+                <span class="product-price text-center"
+                  >${{ product.PRICE }}</span
+                >
+                <p-button
+                  *ngIf="isLoggedIn"
+                  icon="pi pi-pencil"
+                  styleClass="p-button-rounded"
+                  (onClick)="onEdit(product)"
+                ></p-button>
+                <p-button
+                  *ngIf="isLoggedIn"
+                  icon="pi pi-trash"
+                  styleClass="p-button-rounded"
+                  (onClick)="onDelete(product)"
+                ></p-button>
+              </div>
+              <div class="text-base md:text-2xl uppercase">
+                {{ product.NAME }}
+              </div>
             </div>
           </div>
         </a>

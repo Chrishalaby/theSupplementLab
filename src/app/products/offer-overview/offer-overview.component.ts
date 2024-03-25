@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DropdownModule } from 'primeng/dropdown';
@@ -25,7 +26,8 @@ export class OfferOverviewComponent {
   constructor(
     private readonly dynamicDialogConfig: DynamicDialogConfig,
     private cartService: CartService,
-    private ref: DynamicDialogRef
+    private ref: DynamicDialogRef,
+    private router: Router
   ) {}
 
   productOverview = this.dynamicDialogConfig.data;
@@ -58,5 +60,17 @@ export class OfferOverviewComponent {
 
     this.cartService.addToCart(this.productSentToCart);
     this.ref.close(true);
+  }
+
+  buyNow() {
+    this.productSentToCart.quantity = this.chosenQuantity;
+    this.productSentToCart.image =
+      this.productOverview.My_Uploaded_files[0]?.My_URL;
+    this.productSentToCart.name = this.productOverview.NAME;
+    this.productSentToCart.price = this.productOverview.PRICE;
+
+    this.cartService.addToCart(this.productSentToCart);
+    this.ref.close(true);
+    this.router.navigate(['/user-info']);
   }
 }

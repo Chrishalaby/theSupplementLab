@@ -1,3 +1,29 @@
 .card{
   box-shadow: 0px 10px 40px rgba(17, 221, 34, 0.06);;
 }
+
+$colors: (#d13447, #ffbf00, #263672);
+
+@for $i from 0 through 149 {
+  $w: random(8);
+  $l: random(100);
+  .confetti-#{$i} {
+    z-index: 5;
+    position: absolute;
+    width: #{$w*1.4}px;
+    height: #{$w*1.2}px;
+    background-color: nth($colors, random(3));
+    top: -10%;
+    left: unquote($l+"%");
+    opacity: random() + 0.5;
+    transform: rotate(#{random()*360}deg);
+    animation: drop-#{$i} unquote(4+random()+"s") unquote(random()+"s") infinite;
+  }
+
+  @keyframes drop-#{$i} {
+    100% {
+      top: 110%;
+      left: unquote($l+random(15)+"%");
+    }
+  }
+}

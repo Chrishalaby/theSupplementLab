@@ -23,13 +23,26 @@
         {{ productOverview.NAME }}
       </h1>
       <p class="text-4xl font-bold">${{ productOverview.PRICE }}</p>
-      <div class="md:mt-6 mt-2 flex flex-column gap-2">
-        <p>Flavor</p>
-        <p-dropdown
-          [options]="allFlavors"
-          (onChange)="onFlavorChange($event)"
-        ></p-dropdown>
+      <div
+        class="flex flex-row justify-content-between align-items-center md:mt-5 mt-2"
+      >
+        <div class="flex flex-column gap-2">
+          <p>Flavor</p>
+          <p-dropdown
+            [options]="allFlavors"
+            (onChange)="onFlavorChange($event)"
+          ></p-dropdown>
+        </div>
+        <p-button
+          class="md:mt-0 mt-4"
+          label="Buy Now!"
+          (onClick)="buyNow()"
+          [disabled]="
+            productOverview.My_Inventory_status.VALUE === 'outofstock'
+          "
+        ></p-button>
       </div>
+
       <div
         class="md:mt-4 mt-2 flex md:flex-row flex-column justify-content-between gap-4"
       >

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DataView, DataViewModule } from 'primeng/dataview';
@@ -37,9 +37,9 @@ export class ProductsComponent {
   products: any[] = [];
   productTypes: any[] = [];
   isLoggedIn: boolean = false;
-
+  productTypeControl: FormControl = new FormControl();
   search: FormControl = new FormControl('');
-
+  id: number = 0;
   @ViewChild('dv') dataView!: DataView;
 
   prodParamitem = {
@@ -54,18 +54,31 @@ export class ProductsComponent {
     private readonly proxyService: ProxyService,
     private authService: AuthService,
     private readonly productService: ProductService,
-    private readonly router: Router
+    private readonly router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.canLogin;
 
-    this.getProducts();
+    this.route.paramMap.subscribe((params) => {
+      this.id = parseInt(params.get('id') || '0');
+      if (this.id) {
+        this.prodParamitem.PRODUCT_TYPE_ID_LIST = [this.id];
+        this.getProducts();
+      } else {
+        this.prodParamitem.PRODUCT_TYPE_ID_LIST = [];
+      }
+    });
 
     this.proxyService
       .Get_Product_type_By_OWNER_ID({ OWNER_ID: 1 })
       .subscribe((data) => {
         this.productTypes = data;
+        const selectedType = this.productTypes.find(
+          (type) => type.PRODUCT_TYPE_ID === +this.id
+        );
+        this.productTypeControl.setValue(selectedType);
       });
 
     this.search.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
@@ -75,8 +88,15 @@ export class ProductsComponent {
   }
 
   onSortChange(event: any) {
-    this.prodParamitem.PRODUCT_TYPE_ID_LIST[0] = event.value
-      .PRODUCT_TYPE_ID as number;
+    if (event.value == null) {
+      this.prodParamitem.PRODUCT_TYPE_ID_LIST = [];
+    } else {
+      this.prodParamitem.PRODUCT_TYPE_ID_LIST = [
+        event.value.PRODUCT_TYPE_ID as number,
+      ];
+    }
+
+    this.dataView.first = 0;
 
     this.getProducts();
   }

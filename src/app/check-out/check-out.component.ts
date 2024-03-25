@@ -71,8 +71,10 @@ export class CheckOutComponent {
   //     };
   //   });
   // }
+  confettiArray: any[] = [];
 
   checkOut() {
+    this.confettiArray = Array.from({ length: 150 }, (_, i) => i).reverse();
     const url = 'https://formspree.io/f/xnqyzvez';
     const data = {
       userInfo: this.userInfo,

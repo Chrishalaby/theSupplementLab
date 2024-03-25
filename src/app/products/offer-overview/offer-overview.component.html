@@ -18,6 +18,12 @@
     </p-galleria>
   </div>
   <div class="md:col-6 col-12">
+    <p-button
+      class="md:mt-0 mt-4"
+      label="Buy Now!"
+      (onClick)="buyNow()"
+      [disabled]="productOverview.My_Inventory_status.VALUE === 'outofstock'"
+    ></p-button>
     <div class="flex gap-2 flex-column">
       <h1 class="text-5xl uppercase">
         {{ productOverview.NAME }}
